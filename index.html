@@ -1,0 +1,2620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>Glowsome Relationships</title>
+
+  <meta
+    name="description"
+    content="Glowsome Relationships. Nurturing relationships anytime, anywhere."
+  >
+
+  <!--
+    GLOWIE ICON
+    This is the small browser-tab / search-result icon.
+  -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="assets/glowie-favicon.png"
+  >
+
+  <style>
+    /* =========================================================
+       GLOWSOME RELATIONSHIPS
+       Complete website
+       ========================================================= */
+
+    :root {
+      --berry: #bb2853;
+      --berry-dark: #a91f49;
+      --berry-soft: #ca5875;
+      --berry-pale: #f4dce3;
+
+      --ink: #171717;
+      --grey: #686868;
+      --grey-light: #989898;
+      --line: #e7e4e3;
+
+      --white: #ffffff;
+      --warm-white: #fdfcfa;
+      --warm-grey: #f6f4f2;
+
+      --page-x: clamp(22px, 4.6vw, 78px);
+      --content-width: 1640px;
+
+      --ease: cubic-bezier(.22, 1, .36, 1);
+    }
+
+    /* =========================================================
+       RESET
+       ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--warm-white);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+
+      background: var(--warm-white);
+      color: var(--ink);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-weight: 400;
+
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      color: inherit;
+    }
+
+    ::selection {
+      background: var(--berry);
+      color: white;
+    }
+
+    /* =========================================================
+       GLOBAL LAYOUT
+       ========================================================= */
+
+    .container {
+      width: min(100%, var(--content-width));
+      margin-inline: auto;
+      padding-inline: var(--page-x);
+    }
+
+    .eyebrow {
+      margin: 0;
+
+      color: #888;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.4;
+
+      letter-spacing: .31em;
+      text-transform: uppercase;
+    }
+
+    .berry {
+      color: var(--berry);
+    }
+
+    .italic {
+      color: var(--berry);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .body-large {
+      color: var(--grey);
+
+      font-size: clamp(18px, 1.42vw, 25px);
+      line-height: 1.55;
+
+      letter-spacing: -.018em;
+    }
+
+    .text-link {
+      position: relative;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+
+      width: fit-content;
+
+      padding-bottom: 5px;
+
+      color: #5f5f5f;
+      font-size: 17px;
+
+      border-bottom: 1px solid #bfb9b7;
+
+      transition:
+        color .25s ease,
+        border-color .25s ease;
+    }
+
+    .text-link:hover {
+      color: var(--berry);
+      border-color: var(--berry);
+    }
+
+    .text-link .arrow {
+      display: inline-block;
+      transition: transform .3s var(--ease);
+    }
+
+    .text-link:hover .arrow {
+      transform: translate(3px, -3px);
+    }
+
+    .pill-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+
+      min-width: 250px;
+
+      padding: 20px 25px;
+
+      background: rgba(255,255,255,.76);
+      color: var(--ink);
+
+      border: 1px solid rgba(30,30,30,.13);
+      border-radius: 999px;
+
+      backdrop-filter: blur(16px);
+
+      font-size: 17px;
+      font-weight: 500;
+
+      transition:
+        transform .3s var(--ease),
+        border-color .3s ease,
+        background .3s ease;
+    }
+
+    .pill-button:hover {
+      transform: translateY(-3px);
+      border-color: rgba(187,40,83,.4);
+      background: white;
+    }
+
+    .pill-button .arrow {
+      transition: transform .3s var(--ease);
+    }
+
+    .pill-button:hover .arrow {
+      transform: translate(3px, -3px);
+    }
+
+    .circle-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 43px;
+      height: 43px;
+      flex: 0 0 43px;
+
+      border-radius: 50%;
+
+      background: var(--ink);
+      color: white;
+
+      font-size: 16px;
+
+      transition:
+        transform .3s var(--ease),
+        background .3s ease;
+    }
+
+    a:hover .circle-arrow {
+      transform: rotate(7deg) translate(2px, -2px);
+      background: var(--berry);
+    }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    .site-header {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      transition:
+        background .3s ease,
+        border-color .3s ease,
+        backdrop-filter .3s ease;
+    }
+
+    .site-header.scrolled {
+      background: rgba(253,252,250,.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+
+      border-bottom: 1px solid rgba(0,0,0,.055);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+
+      min-height: 104px;
+    }
+
+    .brand {
+      position: relative;
+      z-index: 1002;
+
+      display: flex;
+      align-items: center;
+
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      width: 104px;
+      height: auto;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(19px, 2.2vw, 38px);
+    }
+
+    .desktop-nav a {
+      position: relative;
+
+      padding: 10px 0;
+
+      color: #4e4e4e;
+      font-size: 14px;
+      font-weight: 450;
+
+      white-space: nowrap;
+
+      transition: color .25s ease;
+    }
+
+    .desktop-nav a::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: 3px;
+
+      width: 100%;
+      height: 1px;
+
+      background: var(--berry);
+
+      transform: scaleX(0);
+      transform-origin: right;
+
+      transition: transform .35s var(--ease);
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a.active {
+      color: var(--ink);
+    }
+
+    .desktop-nav a:hover::after,
+    .desktop-nav a.active::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* =========================================================
+       MOBILE MENU
+       ========================================================= */
+
+    .menu-button {
+      position: relative;
+      z-index: 1002;
+
+      display: none;
+
+      width: 42px;
+      height: 42px;
+
+      padding: 0;
+
+      background: transparent;
+      border: 0;
+
+      cursor: pointer;
+    }
+
+    .menu-button span {
+      position: absolute;
+      left: 8px;
+
+      width: 26px;
+      height: 1px;
+
+      background: var(--ink);
+
+      transition:
+        transform .35s var(--ease),
+        top .35s var(--ease);
+    }
+
+    .menu-button span:first-child {
+      top: 16px;
+    }
+
+    .menu-button span:last-child {
+      top: 25px;
+    }
+
+    body.menu-open .menu-button span:first-child {
+      top: 20px;
+      transform: rotate(45deg);
+    }
+
+    body.menu-open .menu-button span:last-child {
+      top: 20px;
+      transform: rotate(-45deg);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      z-index: 1001;
+      inset: 0;
+
+      display: none;
+
+      background: rgba(253,252,250,.98);
+      backdrop-filter: blur(20px);
+
+      opacity: 0;
+      pointer-events: none;
+
+      transition: opacity .35s ease;
+    }
+
+    body.menu-open .mobile-menu {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-menu-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      min-height: 100vh;
+
+      padding: 115px var(--page-x) 60px;
+    }
+
+    .mobile-menu nav {
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+    }
+
+    .mobile-menu nav a {
+      font-size: clamp(40px, 11vw, 66px);
+      line-height: 1.05;
+      letter-spacing: -.055em;
+    }
+
+    .mobile-menu nav a.active {
+      color: var(--berry);
+      font-style: italic;
+    }
+
+    /* =========================================================
+       SCENES / PAGE ROUTING
+       ========================================================= */
+
+    .scene {
+      display: none;
+
+      min-height: 100vh;
+
+      opacity: 0;
+      transform: translateY(9px);
+    }
+
+    .scene.active {
+      display: block;
+
+      animation: sceneIn .65s var(--ease) forwards;
+    }
+
+    @keyframes sceneIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================================================
+       HOME HERO
+       ========================================================= */
+
+    .hero {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      min-height: 100svh;
+
+      padding-top: 104px;
+
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: min(76vw, 1000px);
+      height: min(76vw, 1000px);
+
+      left: 27%;
+      top: 23%;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(190,50,84,.18) 0%,
+          rgba(208,98,123,.12) 31%,
+          rgba(238,190,201,.07) 51%,
+          rgba(255,255,255,0) 72%
+        );
+
+      filter: blur(18px);
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      width: 100%;
+
+      padding-top: clamp(70px, 8vh, 120px);
+      padding-bottom: clamp(75px, 11vh, 140px);
+    }
+
+    .hero .eyebrow {
+      margin-bottom: clamp(38px, 5vh, 65px);
+    }
+
+    .hero h1 {
+      max-width: 1280px;
+
+      margin: 0;
+
+      font-size: clamp(64px, 8.2vw, 145px);
+      font-weight: 350;
+      line-height: .91;
+
+      letter-spacing: -.073em;
+    }
+
+    .hero h1 .italic {
+      display: inline;
+    }
+
+    .hero-description {
+      max-width: 760px;
+
+      margin: clamp(38px, 5vw, 67px) 0 0;
+
+      color: #606060;
+
+      font-size: clamp(18px, 1.55vw, 27px);
+      line-height: 1.55;
+
+      letter-spacing: -.022em;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 31px;
+
+      margin-top: 48px;
+    }
+
+    /* =========================================================
+       HOME: NURTURING STATEMENT
+       ========================================================= */
+
+    .home-statement {
+      padding: clamp(125px, 15vw, 240px) 0;
+
+      background: white;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .home-statement .eyebrow {
+      margin-bottom: 45px;
+    }
+
+    .home-statement h2 {
+      max-width: 1250px;
+
+      margin: 0;
+
+      font-size: clamp(59px, 7.25vw, 125px);
+      font-weight: 350;
+      line-height: .96;
+
+      letter-spacing: -.065em;
+    }
+
+    /* =========================================================
+       LUCIE HOME SECTION
+       ========================================================= */
+
+    .lucie-home {
+      display: grid;
+      grid-template-columns: .96fr 1.04fr;
+
+      min-height: 850px;
+
+      border-top: 1px solid var(--line);
+      background: var(--warm-white);
+    }
+
+    .lucie-home-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding:
+        clamp(90px, 10vw, 160px)
+        var(--page-x);
+    }
+
+    .lucie-home-copy .eyebrow {
+      margin-bottom: 37px;
+    }
+
+    .lucie-home h2 {
+      max-width: 670px;
+
+      margin: 0 0 42px;
+
+      font-size: clamp(53px, 5.2vw, 90px);
+      font-weight: 350;
+      line-height: .98;
+
+      letter-spacing: -.061em;
+    }
+
+    .lucie-home-copy .copy {
+      max-width: 650px;
+    }
+
+    .lucie-home-copy .copy p {
+      margin: 0 0 17px;
+
+      color: var(--grey);
+
+      font-size: clamp(17px, 1.25vw, 21px);
+      line-height: 1.62;
+
+      letter-spacing: -.015em;
+    }
+
+    .lucie-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 17px;
+
+      width: fit-content;
+
+      margin-top: 30px;
+
+      padding-bottom: 5px;
+
+      font-size: 16px;
+      font-weight: 550;
+
+      border-bottom: 1px solid #c6c2c0;
+    }
+
+    .lucie-home-photo {
+      position: relative;
+
+      min-height: 720px;
+
+      margin: 29px 29px 29px 0;
+
+      overflow: hidden;
+
+      border-radius: 34px;
+      background: #eee9e5;
+    }
+
+    .lucie-home-photo img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* =========================================================
+       RECONNECTION HOME
+       ========================================================= */
+
+    .reconnection-home {
+      padding:
+        clamp(120px, 12vw, 190px)
+        0
+        clamp(100px, 10vw, 160px);
+
+      background: white;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .reconnection-top {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: clamp(50px, 8vw, 130px);
+    }
+
+    .reconnection-heading .eyebrow {
+      margin-bottom: 39px;
+    }
+
+    .reconnection-heading h2 {
+      max-width: 680px;
+
+      margin: 0;
+
+      font-size: clamp(53px, 5.4vw, 94px);
+      font-weight: 350;
+      line-height: 1;
+
+      letter-spacing: -.06em;
+    }
+
+    .reconnection-info {
+      padding-top: 2px;
+    }
+
+    .reconnection-info > p {
+      max-width: 690px;
+
+      margin: 0;
+
+      color: var(--grey);
+
+      font-size: clamp(20px, 1.55vw, 26px);
+      line-height: 1.55;
+
+      letter-spacing: -.02em;
+    }
+
+    .notify-form {
+      display: flex;
+      align-items: center;
+
+      max-width: 720px;
+
+      margin-top: 50px;
+
+      border-bottom: 1px solid #cfcac8;
+    }
+
+    .notify-form input {
+      flex: 1;
+
+      min-width: 0;
+
+      padding: 16px 0 17px;
+
+      background: transparent;
+      border: 0;
+      outline: none;
+
+      color: var(--ink);
+
+      font-size: 18px;
+    }
+
+    .notify-form input::placeholder {
+      color: #aaa5a3;
+    }
+
+    .notify-form button {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 16px 0 17px 18px;
+
+      background: transparent;
+      border: 0;
+
+      color: var(--ink);
+
+      font-weight: 600;
+
+      cursor: pointer;
+    }
+
+    .notify-feedback {
+      min-height: 20px;
+
+      margin-top: 12px;
+
+      color: var(--berry);
+      font-size: 13px;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 27px;
+
+      margin-top: 95px;
+    }
+
+    .course-card {
+      position: relative;
+
+      min-height: 330px;
+
+      overflow: hidden;
+
+      border-radius: 27px;
+
+      background:
+        radial-gradient(
+          ellipse at 50% 45%,
+          rgba(255,255,255,1) 0%,
+          rgba(247,244,243,1) 25%,
+          rgba(228,223,221,.94) 65%,
+          rgba(211,207,205,.93) 100%
+        );
+    }
+
+    .course-card::before {
+      content: "";
+
+      position: absolute;
+      left: 50%;
+      top: 45%;
+
+      width: 150px;
+      height: 110px;
+
+      transform: translate(-50%, -50%) rotate(-9deg);
+
+      border-radius: 45%;
+
+      background:
+        radial-gradient(
+          circle at 30% 27%,
+          rgba(255,255,255,.95),
+          rgba(225,220,217,.45) 52%,
+          rgba(255,255,255,0) 74%
+        );
+
+      filter: blur(2px);
+
+      box-shadow:
+        0 30px 45px rgba(110,100,95,.08);
+
+      opacity: .85;
+    }
+
+    .course-card::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(70,60,55,.14),
+          transparent 62%
+        );
+    }
+
+    .course-card-content {
+      position: absolute;
+      z-index: 2;
+      left: 31px;
+      bottom: 30px;
+
+      color: white;
+    }
+
+    .course-card-content p {
+      margin: 0 0 11px;
+
+      font-size: 11px;
+      font-weight: 550;
+      letter-spacing: .29em;
+      text-transform: uppercase;
+    }
+
+    .course-card-content h3 {
+      margin: 0;
+
+      font-size: 25px;
+      font-weight: 400;
+    }
+
+    .reconnection-more {
+      margin-top: 36px;
+    }
+
+    /* =========================================================
+       SHARED PAGE HERO
+       ========================================================= */
+
+    .page-hero {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      min-height: 82svh;
+
+      padding-top: 104px;
+
+      overflow: hidden;
+    }
+
+    .page-hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 800px;
+      height: 800px;
+
+      right: -170px;
+      bottom: -250px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(189,43,82,.14),
+          rgba(235,185,197,.07) 44%,
+          transparent 70%
+        );
+
+      pointer-events: none;
+    }
+
+    .page-hero-inner {
+      position: relative;
+      z-index: 2;
+
+      width: 100%;
+
+      padding-top: clamp(80px, 10vw, 150px);
+      padding-bottom: clamp(90px, 11vw, 170px);
+    }
+
+    .page-hero .eyebrow {
+      margin-bottom: 40px;
+    }
+
+    .page-hero h1 {
+      max-width: 1220px;
+
+      margin: 0;
+
+      font-size: clamp(64px, 8vw, 134px);
+      font-weight: 350;
+      line-height: .94;
+
+      letter-spacing: -.068em;
+    }
+
+    .page-hero .intro {
+      max-width: 800px;
+
+      margin: 50px 0 0;
+
+      color: var(--grey);
+
+      font-size: clamp(19px, 1.5vw, 25px);
+      line-height: 1.55;
+
+      letter-spacing: -.02em;
+    }
+
+    /* =========================================================
+       GLOWIE PAGE
+       ========================================================= */
+
+    .glowie-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .glowie-block {
+      min-height: 680px;
+
+      padding:
+        clamp(90px, 9vw, 145px)
+        var(--page-x);
+
+      border-right: 1px solid var(--line);
+    }
+
+    .glowie-block:last-child {
+      border-right: 0;
+    }
+
+    .glowie-block .eyebrow {
+      margin-bottom: 35px;
+    }
+
+    .glowie-block h2 {
+      max-width: 650px;
+
+      margin: 0 0 39px;
+
+      font-size: clamp(48px, 5vw, 83px);
+      font-weight: 350;
+      line-height: .99;
+
+      letter-spacing: -.058em;
+    }
+
+    .glowie-block p {
+      max-width: 620px;
+
+      color: var(--grey);
+
+      font-size: 19px;
+      line-height: 1.64;
+    }
+
+    .glowie-download {
+      padding:
+        clamp(110px, 12vw, 180px)
+        0;
+
+      background: var(--berry);
+      color: white;
+    }
+
+    .glowie-download .eyebrow {
+      margin-bottom: 40px;
+      color: rgba(255,255,255,.68);
+    }
+
+    .glowie-download h2 {
+      max-width: 1130px;
+
+      margin: 0;
+
+      font-size: clamp(59px, 7vw, 117px);
+      font-weight: 350;
+      line-height: .95;
+
+      letter-spacing: -.065em;
+    }
+
+    .glowie-download h2 em {
+      color: white;
+      font-style: italic;
+    }
+
+    .download-white {
+      margin-top: 50px;
+
+      background: white;
+      color: var(--berry);
+
+      border-color: white;
+    }
+
+    /* =========================================================
+       ABOUT PAGE
+       ========================================================= */
+
+    .about-main {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .about-copy {
+      padding:
+        clamp(90px, 9vw, 150px)
+        var(--page-x);
+    }
+
+    .about-copy .eyebrow {
+      margin-bottom: 38px;
+    }
+
+    .about-copy h2 {
+      max-width: 670px;
+
+      margin: 0 0 45px;
+
+      font-size: clamp(52px, 5.4vw, 91px);
+      font-weight: 350;
+      line-height: .98;
+
+      letter-spacing: -.06em;
+    }
+
+    .about-copy p {
+      max-width: 690px;
+
+      margin: 0 0 20px;
+
+      color: var(--grey);
+
+      font-size: 19px;
+      line-height: 1.65;
+    }
+
+    .about-photo {
+      min-height: 850px;
+
+      margin: 30px 30px 30px 0;
+
+      overflow: hidden;
+
+      border-radius: 32px;
+
+      background: #ece8e5;
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* =========================================================
+       RECONNECTION PAGE
+       ========================================================= */
+
+    .reconnection-page-content {
+      padding:
+        clamp(100px, 10vw, 155px)
+        0;
+
+      border-top: 1px solid var(--line);
+      background: white;
+    }
+
+    .reconnection-page-content .course-grid {
+      margin-top: 70px;
+    }
+
+    /* =========================================================
+       CONTACT
+       ========================================================= */
+
+    .contact-page {
+      min-height: 100svh;
+      padding-top: 104px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      min-height: calc(100svh - 104px);
+    }
+
+    .contact-heading {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding:
+        clamp(80px, 10vw, 150px)
+        var(--page-x);
+
+      border-right: 1px solid var(--line);
+    }
+
+    .contact-heading .eyebrow {
+      margin-bottom: 38px;
+    }
+
+    .contact-heading h1 {
+      max-width: 720px;
+
+      margin: 0;
+
+      font-size: clamp(62px, 7vw, 120px);
+      font-weight: 350;
+      line-height: .94;
+
+      letter-spacing: -.066em;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding:
+        clamp(80px, 10vw, 150px)
+        var(--page-x);
+    }
+
+    .contact-details p {
+      margin: 0 0 36px;
+
+      color: var(--grey);
+
+      font-size: clamp(20px, 1.55vw, 26px);
+      line-height: 1.55;
+    }
+
+    .contact-email {
+      display: inline-block;
+
+      width: fit-content;
+
+      margin-bottom: 48px;
+
+      color: var(--berry);
+
+      font-size: clamp(30px, 3vw, 49px);
+      font-weight: 350;
+      letter-spacing: -.04em;
+
+      border-bottom: 1px solid rgba(187,40,83,.34);
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .site-footer {
+      position: relative;
+
+      min-height: 510px;
+
+      overflow: hidden;
+
+      background: var(--warm-white);
+
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-top {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 50px;
+
+      padding-top: 72px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+    }
+
+    .footer-links a {
+      font-size: 15px;
+      font-weight: 520;
+    }
+
+    .footer-links a:hover {
+      color: var(--berry);
+    }
+
+    .footer-copyright {
+      margin: 0;
+
+      color: #969696;
+
+      font-size: 15px;
+    }
+
+    .footer-word {
+      position: absolute;
+
+      left: -1.5vw;
+      bottom: -3.3vw;
+
+      color: #efedec;
+
+      font-size: 17vw;
+      font-weight: 300;
+      line-height: .72;
+
+      letter-spacing: -.07em;
+      white-space: nowrap;
+
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 1050px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .lucie-home,
+      .about-main {
+        grid-template-columns: 1fr;
+      }
+
+      .lucie-home-photo,
+      .about-photo {
+        min-height: 680px;
+        margin:
+          0
+          var(--page-x)
+          var(--page-x);
+      }
+
+      .reconnection-top {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .glowie-intro-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .glowie-block {
+        min-height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-heading {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .header-inner {
+        min-height: 82px;
+      }
+
+      .brand img {
+        width: 83px;
+      }
+
+      .hero,
+      .page-hero {
+        padding-top: 82px;
+      }
+
+      .hero {
+        min-height: 92svh;
+      }
+
+      .hero-content {
+        padding-top: 75px;
+      }
+
+      .hero h1 {
+        font-size: clamp(58px, 16vw, 90px);
+        line-height: .94;
+      }
+
+      .hero-description {
+        font-size: 18px;
+      }
+
+      .hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .pill-button {
+        width: 100%;
+      }
+
+      .home-statement h2 {
+        font-size: clamp(53px, 14vw, 80px);
+      }
+
+      .lucie-home-copy {
+        padding-top: 100px;
+        padding-bottom: 60px;
+      }
+
+      .lucie-home-photo,
+      .about-photo {
+        min-height: 510px;
+      }
+
+      .reconnection-home {
+        padding-top: 105px;
+      }
+
+      .course-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+
+        margin-top: 60px;
+      }
+
+      .course-card {
+        min-height: 300px;
+      }
+
+      .notify-form {
+        align-items: flex-end;
+      }
+
+      .notify-form button {
+        font-size: 13px;
+      }
+
+      .page-hero {
+        min-height: 72svh;
+      }
+
+      .page-hero h1 {
+        font-size: clamp(58px, 15vw, 88px);
+      }
+
+      .contact-page {
+        padding-top: 82px;
+      }
+
+      .contact-grid {
+        min-height: calc(100svh - 82px);
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+
+      .footer-word {
+        font-size: 23vw;
+        bottom: 0;
+      }
+
+      .site-footer {
+        min-height: 390px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .eyebrow {
+        font-size: 10px;
+      }
+
+      .hero-actions {
+        gap: 22px;
+      }
+
+      .lucie-home-photo,
+      .about-photo {
+        min-height: 430px;
+        border-radius: 22px;
+      }
+
+      .course-card {
+        border-radius: 20px;
+      }
+
+      .footer-links {
+        gap: 20px 27px;
+      }
+    }
+
+    /* =========================================================
+       ACCESSIBILITY / REDUCED MOTION
+       ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner container">
+
+      <a
+        href="#home"
+        class="brand"
+        data-page="home"
+        aria-label="Glowsome Relationships home"
+      >
+        <!--
+          WEBSITE LOGO:
+          Use the version that says GLOWSOME RELATIONSHIPS.
+        -->
+        <img
+          src="assets/glowsome-relationships-logo.png"
+          alt="Glowsome Relationships"
+        >
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#home" data-page="home">Home</a>
+        <a href="#glowie" data-page="glowie">Glowie</a>
+        <a href="#about" data-page="about">About Lucie</a>
+        <a href="#reconnection" data-page="reconnection">
+          Reconnection Project
+        </a>
+        <a href="#contact" data-page="contact">Contact</a>
+      </nav>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- =======================================================
+       MOBILE MENU
+       ======================================================= -->
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+
+      <nav aria-label="Mobile navigation">
+        <a href="#home" data-page="home">Home</a>
+        <a href="#glowie" data-page="glowie">Glowie</a>
+        <a href="#about" data-page="about">About Lucie</a>
+        <a href="#reconnection" data-page="reconnection">
+          Reconnection Project
+        </a>
+        <a href="#contact" data-page="contact">Contact</a>
+      </nav>
+
+    </div>
+  </div>
+
+
+  <!-- =======================================================
+       HOME
+       ======================================================= -->
+
+  <main
+    class="scene active"
+    id="home"
+    data-scene="home"
+  >
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="hero-content container">
+
+        <p class="eyebrow">
+          A place to navigate your relationship
+        </p>
+
+        <h1>
+          Meet <span class="italic">Glowie.</span><br>
+          Your calm companion.
+        </h1>
+
+        <p class="hero-description">
+          A gentle daily app that allows you to tap into broader perspectives
+          about what you are experiencing in your relationship. Unlike your
+          therapist, Glowie is available 24/7.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            href="#glowie"
+            class="pill-button"
+            data-page="glowie"
+          >
+            <span>What can Glowie do?</span>
+            <span class="arrow">↗</span>
+          </a>
+
+          <!-- App Store link placeholder -->
+          <a
+            href="#"
+            class="text-link placeholder-link"
+          >
+            <span>Download Glowie</span>
+            <span class="arrow">↗</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- NURTURING -->
+
+    <section class="home-statement">
+      <div class="container">
+
+        <p class="eyebrow">
+          Glowsome Relationships
+        </p>
+
+        <h2>
+          Nurturing relationships<br>
+          <span class="italic">anytime, anywhere.</span>
+        </h2>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT LUCIE -->
+
+    <section class="lucie-home">
+
+      <div class="lucie-home-copy">
+
+        <p class="eyebrow">
+          Behind the scenes
+        </p>
+
+        <h2>
+          Why I built
+          <span class="italic">Glowie?</span>
+        </h2>
+
+        <div class="copy">
+
+          <p>
+            I created Glowie based on my knowledge as a systemic couples
+            psychotherapist and coach based in Prague, working with clients
+            from all over the world.
+          </p>
+
+          <p>
+            After years of working with individuals and couples on themes of
+            intimacy, relationships and emotional well-being, I noticed a
+            recurring gap: the space between therapy sessions, where people
+            are left alone with their thoughts, questions and feelings,
+            without a safe place to explore them.
+          </p>
+
+          <p>
+            Glowie was built to fill that space. She is a warm, non-directive
+            AI companion grounded in systemic therapy principles, designed to
+            support self-reflection, emotional exploration and deeper
+            self-understanding.
+          </p>
+
+        </div>
+
+        <a
+          href="#about"
+          class="lucie-link"
+          data-page="about"
+        >
+          <span>More about Lucie</span>
+          <span class="circle-arrow">↗</span>
+        </a>
+
+      </div>
+
+      <div class="lucie-home-photo">
+        <!-- Replace lucie.jpg with Lucie's chosen photograph -->
+        <img
+          src="assets/lucie.jpg"
+          alt="Lucie Rust"
+        >
+      </div>
+
+    </section>
+
+
+    <!-- RECONNECTION PROJECT -->
+
+    <section class="reconnection-home">
+
+      <div class="container">
+
+        <div class="reconnection-top">
+
+          <div class="reconnection-heading">
+
+            <p class="eyebrow">
+              The Reconnection Project
+            </p>
+
+            <h2>
+              An academy is
+              <span class="italic">growing.</span>
+            </h2>
+
+          </div>
+
+          <div class="reconnection-info">
+
+            <p>
+              Guided courses to help you build meaningful relationships,
+              step by step. Leave your email and we'll let you know the
+              moment doors open.
+            </p>
+
+            <form
+              class="notify-form"
+              data-placeholder-form
+            >
+              <input
+                type="email"
+                placeholder="your@email.com"
+                aria-label="Email address"
+                required
+              >
+
+              <button type="submit">
+                Notify me
+                <span>→</span>
+              </button>
+            </form>
+
+            <div
+              class="notify-feedback"
+              aria-live="polite"
+            ></div>
+
+          </div>
+
+        </div>
+
+
+        <div class="course-grid">
+
+          <article class="course-card">
+            <div class="course-card-content">
+              <p>Coming soon</p>
+              <h3>Module 1</h3>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-card-content">
+              <p>Coming soon</p>
+              <h3>Module 2</h3>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-card-content">
+              <p>Coming soon</p>
+              <h3>Module 3</h3>
+            </div>
+          </article>
+
+        </div>
+
+
+        <div class="reconnection-more">
+          <a
+            href="#reconnection"
+            class="text-link"
+            data-page="reconnection"
+          >
+            Explore the Reconnection Project
+            <span class="arrow">↗</span>
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       GLOWIE PAGE
+       ======================================================= -->
+
+  <main
+    class="scene"
+    id="glowie"
+    data-scene="glowie"
+  >
+
+    <section class="page-hero">
+      <div class="page-hero-inner container">
+
+        <p class="eyebrow">
+          Meet Glowie
+        </p>
+
+        <h1>
+          A calm space to explore
+          <span class="italic">your relationship.</span>
+        </h1>
+
+        <p class="intro">
+          Glowie is a warm, non-directive AI companion grounded in
+          systemic therapy principles. She helps you slow down, explore
+          what you are experiencing and see your situation from broader
+          perspectives.
+        </p>
+
+      </div>
+    </section>
+
+
+    <section class="glowie-intro-grid">
+
+      <div class="glowie-block">
+
+        <p class="eyebrow">
+          What Glowie can do
+        </p>
+
+        <h2>
+          A space to notice,
+          question and
+          <span class="italic">understand.</span>
+        </h2>
+
+        <p>
+          Glowie can help you reflect on patterns in your relationships,
+          explore different perspectives, put words to feelings and think
+          more deeply about the way you connect with yourself and others.
+        </p>
+
+        <p>
+          She can ask reflective questions, help you pause in emotionally
+          charged moments and give you a private place to explore thoughts
+          that may still feel unfinished.
+        </p>
+
+      </div>
+
+
+      <div class="glowie-block">
+
+        <p class="eyebrow">
+          What Glowie cannot do
+        </p>
+
+        <h2>
+          Glowie is a companion.
+          She is not a
+          <span class="italic">therapist.</span>
+        </h2>
+
+        <p>
+          Glowie does not diagnose, provide medical or psychological
+          treatment, make decisions for you or replace professional therapy.
+        </p>
+
+        <p>
+          She is designed to support reflection, not to tell you what to do.
+          If you need professional or urgent support, you should contact an
+          appropriate qualified professional or emergency service.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="glowie-download">
+      <div class="container">
+
+        <p class="eyebrow">
+          Available soon
+        </p>
+
+        <h2>
+          Your relationship doesn't stop
+          between conversations.
+          <em>Neither does Glowie.</em>
+        </h2>
+
+        <!-- Replace # with App Store URL later -->
+        <a
+          href="#"
+          class="pill-button download-white placeholder-link"
+        >
+          <span>Download Glowie</span>
+          <span class="arrow">↗</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       ABOUT LUCIE
+       ======================================================= -->
+
+  <main
+    class="scene"
+    id="about"
+    data-scene="about"
+  >
+
+    <section class="page-hero">
+      <div class="page-hero-inner container">
+
+        <p class="eyebrow">
+          About Lucie
+        </p>
+
+        <h1>
+          The person
+          <span class="italic">behind Glowie.</span>
+        </h1>
+
+        <p class="intro">
+          Systemic couples psychotherapist and coach based in Prague,
+          working with individuals and couples from around the world.
+        </p>
+
+      </div>
+    </section>
+
+
+    <section class="about-main">
+
+      <div class="about-copy">
+
+        <p class="eyebrow">
+          Behind the scenes
+        </p>
+
+        <h2>
+          Why I built
+          <span class="italic">Glowie?</span>
+        </h2>
+
+        <p>
+          I created Glowie based on my knowledge as a systemic couples
+          psychotherapist and coach based in Prague, working with clients
+          from all over the world.
+        </p>
+
+        <p>
+          After years of working with individuals and couples on themes of
+          intimacy, relationships and emotional well-being, I noticed a
+          recurring gap: the space between therapy sessions, where people
+          are left alone with their thoughts, questions and feelings,
+          without a safe place to explore them.
+        </p>
+
+        <p>
+          Glowie was built to fill that space. She is a warm, non-directive
+          AI companion grounded in systemic therapy principles, designed to
+          support self-reflection, emotional exploration and deeper
+          self-understanding.
+        </p>
+
+        <p>
+          She does not give advice or diagnoses. She asks questions, holds
+          space and accompanies users at their own pace.
+        </p>
+
+        <p>
+          My goal was to create something that extends the therapeutic
+          process into everyday life, making reflective support accessible
+          to anyone who needs it, not just those who can afford regular
+          therapy sessions.
+        </p>
+
+        <a
+          href="https://lucierust.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="lucie-link"
+        >
+          <span>More information at lucierust.com</span>
+          <span class="circle-arrow">↗</span>
+        </a>
+
+      </div>
+
+
+      <div class="about-photo">
+        <img
+          src="assets/lucie.jpg"
+          alt="Lucie Rust"
+        >
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       RECONNECTION PROJECT PAGE
+       ======================================================= -->
+
+  <main
+    class="scene"
+    id="reconnection"
+    data-scene="reconnection"
+  >
+
+    <section class="page-hero">
+      <div class="page-hero-inner container">
+
+        <p class="eyebrow">
+          The Reconnection Project
+        </p>
+
+        <h1>
+          An academy is
+          <span class="italic">growing.</span>
+        </h1>
+
+        <p class="intro">
+          Guided courses to help you build meaningful relationships,
+          step by step.
+        </p>
+
+      </div>
+    </section>
+
+
+    <section class="reconnection-page-content">
+
+      <div class="container">
+
+        <div class="reconnection-top">
+
+          <div class="reconnection-heading">
+
+            <p class="eyebrow">
+              Coming soon
+            </p>
+
+            <h2>
+              Reconnect with what
+              <span class="italic">matters.</span>
+            </h2>
+
+          </div>
+
+
+          <div class="reconnection-info">
+
+            <p>
+              The Reconnection Project is growing into a collection of
+              guided courses designed to help you understand yourself,
+              strengthen relationships and create meaningful change one
+              step at a time.
+            </p>
+
+            <p style="margin-top:24px;">
+              Leave your email and we'll let you know the moment doors open.
+            </p>
+
+            <form
+              class="notify-form"
+              data-placeholder-form
+            >
+              <input
+                type="email"
+                placeholder="your@email.com"
+                aria-label="Email address"
+                required
+              >
+
+              <button type="submit">
+                Notify me
+                <span>→</span>
+              </button>
+            </form>
+
+            <div
+              class="notify-feedback"
+              aria-live="polite"
+            ></div>
+
+          </div>
+
+        </div>
+
+
+        <div class="course-grid">
+
+          <article class="course-card">
+            <div class="course-card-content">
+              <p>Coming soon</p>
+              <h3>Module 1</h3>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-card-content">
+              <p>Coming soon</p>
+              <h3>Module 2</h3>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-card-content">
+              <p>Coming soon</p>
+              <h3>Module 3</h3>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       CONTACT PAGE
+       ======================================================= -->
+
+  <main
+    class="scene contact-page"
+    id="contact"
+    data-scene="contact"
+  >
+
+    <section class="contact-grid">
+
+      <div class="contact-heading">
+
+        <p class="eyebrow">
+          Contact
+        </p>
+
+        <h1>
+          Let's
+          <span class="italic">connect.</span>
+        </h1>
+
+      </div>
+
+
+      <div class="contact-details">
+
+        <p>
+          Glowsome s.r.o.<br>
+          Czech Republic
+        </p>
+
+        <a
+          class="contact-email"
+          href="mailto:glowie@glowsome.com"
+        >
+          glowie@glowsome.com
+        </a>
+
+        <a
+          href="https://lucierust.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-link"
+        >
+          Visit lucierust.com
+          <span class="arrow">↗</span>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer class="site-footer">
+
+    <div class="footer-top container">
+
+      <div class="footer-links">
+
+        <a
+          href="https://lucierust.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Lucie Rust
+        </a>
+
+        <a
+          href="#glowie"
+          data-page="glowie"
+        >
+          Glowie
+        </a>
+
+        <a
+          href="#reconnection"
+          data-page="reconnection"
+        >
+          Reconnection Project
+        </a>
+
+        <a
+          href="#contact"
+          data-page="contact"
+        >
+          Contact
+        </a>
+
+      </div>
+
+      <p class="footer-copyright">
+        © 2026 Glowsome
+      </p>
+
+    </div>
+
+    <div class="footer-word">
+      GLOWSOME
+    </div>
+
+  </footer>
+
+
+  <script>
+    /* =========================================================
+       GLOWSOME WEBSITE JAVASCRIPT
+       ========================================================= */
+
+
+    /* ---------------------------------------------------------
+       ELEMENTS
+       --------------------------------------------------------- */
+
+    const scenes = document.querySelectorAll("[data-scene]");
+    const pageLinks = document.querySelectorAll("[data-page]");
+
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const siteHeader = document.getElementById("siteHeader");
+
+
+    /* ---------------------------------------------------------
+       PAGE NAMES
+       --------------------------------------------------------- */
+
+    const pageTitles = {
+      home: "Glowsome Relationships",
+      glowie: "Glowie | Glowsome Relationships",
+      about: "About Lucie | Glowsome Relationships",
+      reconnection: "Reconnection Project | Glowsome Relationships",
+      contact: "Contact | Glowsome Relationships"
+    };
+
+
+    /* ---------------------------------------------------------
+       SHOW PAGE
+       --------------------------------------------------------- */
+
+    function showPage(page, updateHash = true) {
+
+      const validPages = [
+        "home",
+        "glowie",
+        "about",
+        "reconnection",
+        "contact"
+      ];
+
+      if (!validPages.includes(page)) {
+        page = "home";
+      }
+
+
+      /* Hide every scene */
+
+      scenes.forEach((scene) => {
+        scene.classList.remove("active");
+      });
+
+
+      /* Show selected scene */
+
+      const targetScene = document.querySelector(
+        `[data-scene="${page}"]`
+      );
+
+      if (targetScene) {
+        targetScene.classList.add("active");
+      }
+
+
+      /* Update navigation */
+
+      pageLinks.forEach((link) => {
+
+        if (link.dataset.page === page) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+
+      });
+
+
+      /* Update title */
+
+      document.title = pageTitles[page];
+
+
+      /* Update URL */
+
+      if (updateHash) {
+
+        const newHash =
+          page === "home"
+            ? "#home"
+            : `#${page}`;
+
+        if (window.location.hash !== newHash) {
+          history.pushState(
+            { page },
+            "",
+            newHash
+          );
+        }
+
+      }
+
+
+      /* Close mobile menu */
+
+      closeMenu();
+
+
+      /* Return to the top */
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+
+    }
+
+
+    /* ---------------------------------------------------------
+       NAVIGATION CLICK
+       --------------------------------------------------------- */
+
+    pageLinks.forEach((link) => {
+
+      link.addEventListener("click", (event) => {
+
+        const page = link.dataset.page;
+
+        if (!page) return;
+
+        event.preventDefault();
+
+        showPage(page);
+
+      });
+
+    });
+
+
+    /* ---------------------------------------------------------
+       MOBILE MENU
+       --------------------------------------------------------- */
+
+    function openMenu() {
+
+      document.body.classList.add("menu-open");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        "true"
+      );
+
+      menuButton.setAttribute(
+        "aria-label",
+        "Close navigation"
+      );
+
+    }
+
+
+    function closeMenu() {
+
+      document.body.classList.remove("menu-open");
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      menuButton.setAttribute(
+        "aria-label",
+        "Open navigation"
+      );
+
+    }
+
+
+    menuButton.addEventListener("click", () => {
+
+      const menuIsOpen =
+        document.body.classList.contains("menu-open");
+
+      if (menuIsOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+
+    });
+
+
+    /* ---------------------------------------------------------
+       BROWSER BACK / FORWARD
+       --------------------------------------------------------- */
+
+    window.addEventListener("popstate", () => {
+
+      const page =
+        window.location.hash.replace("#", "") || "home";
+
+      showPage(page, false);
+
+    });
+
+
+    /* ---------------------------------------------------------
+       HEADER GLASS EFFECT
+       --------------------------------------------------------- */
+
+    function updateHeader() {
+
+      if (window.scrollY > 15) {
+        siteHeader.classList.add("scrolled");
+      } else {
+        siteHeader.classList.remove("scrolled");
+      }
+
+    }
+
+    window.addEventListener(
+      "scroll",
+      updateHeader,
+      { passive: true }
+    );
+
+    updateHeader();
+
+
+    /* ---------------------------------------------------------
+       EMAIL PLACEHOLDER
+       The form deliberately DOES NOT submit anywhere yet.
+       --------------------------------------------------------- */
+
+    const placeholderForms =
+      document.querySelectorAll("[data-placeholder-form]");
+
+
+    placeholderForms.forEach((form) => {
+
+      form.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+        const input = form.querySelector("input");
+        const feedback =
+          form.parentElement.querySelector(".notify-feedback");
+
+        if (!input.value.trim()) {
+          feedback.textContent =
+            "Please enter your email address.";
+          return;
+        }
+
+        if (!input.checkValidity()) {
+          feedback.textContent =
+            "Please enter a valid email address.";
+          return;
+        }
+
+        feedback.textContent =
+          "Thank you. Email signup will be connected soon.";
+
+        input.value = "";
+
+      });
+
+    });
+
+
+    /* ---------------------------------------------------------
+       PLACEHOLDER APP STORE LINKS
+       --------------------------------------------------------- */
+
+    const placeholderLinks =
+      document.querySelectorAll(".placeholder-link");
+
+
+    placeholderLinks.forEach((link) => {
+
+      link.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        const originalText =
+          link.querySelector("span:first-child");
+
+        if (!originalText) return;
+
+        const previousText =
+          originalText.textContent;
+
+        originalText.textContent =
+          "Coming soon";
+
+        setTimeout(() => {
+
+          originalText.textContent =
+            previousText;
+
+        }, 1800);
+
+      });
+
+    });
+
+
+    /* ---------------------------------------------------------
+       INITIAL PAGE
+       --------------------------------------------------------- */
+
+    function loadInitialPage() {
+
+      const hash =
+        window.location.hash.replace("#", "");
+
+      const validPages = [
+        "home",
+        "glowie",
+        "about",
+        "reconnection",
+        "contact"
+      ];
+
+      const initialPage =
+        validPages.includes(hash)
+          ? hash
+          : "home";
+
+      showPage(initialPage, false);
+
+    }
+
+    loadInitialPage();
+
+  </script>
+
+</body>
+</html>
