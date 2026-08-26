@@ -15,22 +15,13 @@
     content="Glowsome Relationships. Nurturing relationships anytime, anywhere."
   >
 
-  <!--
-    GLOWIE ICON
-    This is the small browser-tab / search-result icon.
-  -->
   <link
     rel="icon"
     type="image/png"
-    href="assets/Screenshot 2026-08-13 at 17.48.26.png"
+    href="assets/glowie-favicon.png"
   >
 
   <style>
-    /* =========================================================
-       GLOWSOME RELATIONSHIPS
-       Complete website
-       ========================================================= */
-
     :root {
       --berry: #bb2853;
       --berry-dark: #a91f49;
@@ -51,10 +42,6 @@
 
       --ease: cubic-bezier(.22, 1, .36, 1);
     }
-
-    /* =========================================================
-       RESET
-       ========================================================= */
 
     *,
     *::before,
@@ -117,10 +104,6 @@
       background: var(--berry);
       color: white;
     }
-
-    /* =========================================================
-       GLOBAL LAYOUT
-       ========================================================= */
 
     .container {
       width: min(100%, var(--content-width));
@@ -261,10 +244,6 @@
       background: var(--berry);
     }
 
-    /* =========================================================
-       HEADER
-       ========================================================= */
-
     .site-header {
       position: fixed;
       z-index: 1000;
@@ -359,10 +338,6 @@
       transform: scaleX(1);
       transform-origin: left;
     }
-
-    /* =========================================================
-       MOBILE MENU
-       ========================================================= */
 
     .menu-button {
       position: relative;
@@ -461,10 +436,6 @@
       font-style: italic;
     }
 
-    /* =========================================================
-       SCENES / PAGE ROUTING
-       ========================================================= */
-
     .scene {
       display: none;
 
@@ -486,10 +457,6 @@
         transform: translateY(0);
       }
     }
-
-    /* =========================================================
-       HOME HERO
-       ========================================================= */
 
     .hero {
       position: relative;
@@ -557,10 +524,6 @@
       letter-spacing: -.073em;
     }
 
-    .hero h1 .italic {
-      display: inline;
-    }
-
     .hero-description {
       max-width: 760px;
 
@@ -582,10 +545,6 @@
 
       margin-top: 48px;
     }
-
-    /* =========================================================
-       HOME: NURTURING STATEMENT
-       ========================================================= */
 
     .home-statement {
       padding: clamp(125px, 15vw, 240px) 0;
@@ -610,10 +569,6 @@
 
       letter-spacing: -.065em;
     }
-
-    /* =========================================================
-       LUCIE HOME SECTION
-       ========================================================= */
 
     .lucie-home {
       display: grid;
@@ -703,10 +658,6 @@
       object-fit: cover;
       object-position: center;
     }
-
-    /* =========================================================
-       RECONNECTION HOME
-       ========================================================= */
 
     .reconnection-home {
       padding:
@@ -915,10 +866,6 @@
       margin-top: 36px;
     }
 
-    /* =========================================================
-       SHARED PAGE HERO
-       ========================================================= */
-
     .page-hero {
       position: relative;
 
@@ -995,9 +942,63 @@
       letter-spacing: -.02em;
     }
 
-    /* =========================================================
-       GLOWIE PAGE
-       ========================================================= */
+    .glowie-expanded {
+      padding: clamp(90px, 10vw, 160px) 0;
+      background: white;
+      border-top: 1px solid var(--line);
+    }
+
+    .glowie-expanded-inner {
+      max-width: 1020px;
+    }
+
+    .glowie-expanded .eyebrow {
+      margin-bottom: 38px;
+    }
+
+    .glowie-expanded h2 {
+      margin: 0 0 42px;
+      max-width: 900px;
+
+      font-size: clamp(46px, 5vw, 80px);
+      line-height: 1;
+      letter-spacing: -.055em;
+      font-weight: 350;
+    }
+
+    .glowie-expanded p {
+      margin: 0 0 24px;
+
+      color: var(--grey);
+      font-size: clamp(18px, 1.35vw, 22px);
+      line-height: 1.65;
+    }
+
+    .glowie-benefits {
+      margin: 35px 0 40px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .glowie-benefits li {
+      position: relative;
+      margin: 0;
+      padding: 18px 0 18px 30px;
+
+      color: var(--ink);
+      font-size: clamp(18px, 1.35vw, 22px);
+      line-height: 1.45;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .glowie-benefits li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 17px;
+      color: var(--berry);
+    }
 
     .glowie-intro-grid {
       display: grid;
@@ -1045,6 +1046,74 @@
       line-height: 1.64;
     }
 
+    .knowledge-section {
+      padding: clamp(110px, 12vw, 190px) 0;
+      background: var(--warm-white);
+      border-top: 1px solid var(--line);
+    }
+
+    .knowledge-section .eyebrow {
+      margin-bottom: 38px;
+    }
+
+    .knowledge-section h2 {
+      max-width: 1000px;
+
+      margin: 0 0 65px;
+
+      font-size: clamp(53px, 6vw, 99px);
+      font-weight: 350;
+      line-height: .97;
+      letter-spacing: -.06em;
+    }
+
+    .knowledge-intro {
+      max-width: 770px;
+      margin-bottom: 60px;
+
+      color: var(--grey);
+      font-size: clamp(19px, 1.5vw, 24px);
+      line-height: 1.6;
+    }
+
+    .knowledge-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 70px;
+      max-width: 1250px;
+    }
+
+    .knowledge-item {
+      padding: 32px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .knowledge-item h3 {
+      margin: 0 0 14px;
+
+      color: var(--berry);
+      font-size: 19px;
+      line-height: 1.4;
+      font-weight: 600;
+    }
+
+    .knowledge-item p {
+      margin: 0;
+
+      color: var(--grey);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .knowledge-ending {
+      max-width: 820px;
+      margin-top: 65px;
+
+      color: var(--grey);
+      font-size: 19px;
+      line-height: 1.65;
+    }
+
     .glowie-download {
       padding:
         clamp(110px, 12vw, 180px)
@@ -1084,10 +1153,6 @@
 
       border-color: white;
     }
-
-    /* =========================================================
-       ABOUT PAGE
-       ========================================================= */
 
     .about-main {
       display: grid;
@@ -1147,9 +1212,128 @@
       object-fit: cover;
     }
 
-    /* =========================================================
-       RECONNECTION PAGE
-       ========================================================= */
+    .about-background {
+      padding: clamp(110px, 11vw, 180px) 0;
+      background: white;
+      border-top: 1px solid var(--line);
+    }
+
+    .about-background-header {
+      max-width: 1000px;
+      margin-bottom: 65px;
+    }
+
+    .about-background-header .eyebrow {
+      margin-bottom: 34px;
+    }
+
+    .about-background-header h2 {
+      margin: 0;
+
+      font-size: clamp(53px, 6vw, 100px);
+      font-weight: 350;
+      line-height: .97;
+      letter-spacing: -.06em;
+    }
+
+    .about-background-layout {
+      display: grid;
+      grid-template-columns: 1fr .8fr;
+      gap: clamp(60px, 8vw, 130px);
+      align-items: start;
+    }
+
+    .about-background-copy p {
+      max-width: 760px;
+      margin: 0 0 23px;
+
+      color: var(--grey);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .about-second-photo {
+      position: sticky;
+      top: 135px;
+
+      overflow: hidden;
+      border-radius: 30px;
+      background: var(--warm-grey);
+    }
+
+    .about-second-photo img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .memberships {
+      margin-top: 55px;
+      padding-top: 35px;
+      border-top: 1px solid var(--line);
+    }
+
+    .memberships h3,
+    .education-section h3 {
+      margin: 0 0 25px;
+
+      font-size: 24px;
+      font-weight: 450;
+      letter-spacing: -.025em;
+    }
+
+    .memberships ul,
+    .education-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .memberships li {
+      padding: 11px 0;
+      color: var(--grey);
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .education-section {
+      padding: clamp(100px, 10vw, 160px) 0;
+      background: var(--warm-white);
+      border-top: 1px solid var(--line);
+    }
+
+    .education-section h2 {
+      max-width: 1050px;
+      margin: 0 0 65px;
+
+      font-size: clamp(45px, 5vw, 82px);
+      line-height: 1.03;
+      font-weight: 350;
+      letter-spacing: -.055em;
+    }
+
+    .education-list {
+      max-width: 1000px;
+    }
+
+    .education-list li {
+      position: relative;
+
+      padding: 19px 0 19px 27px;
+
+      color: var(--grey);
+      font-size: 17px;
+      line-height: 1.6;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .education-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--berry);
+    }
 
     .reconnection-page-content {
       padding:
@@ -1163,10 +1347,6 @@
     .reconnection-page-content .course-grid {
       margin-top: 70px;
     }
-
-    /* =========================================================
-       CONTACT
-       ========================================================= */
 
     .contact-page {
       min-height: 100svh;
@@ -1243,10 +1423,6 @@
       border-bottom: 1px solid rgba(187,40,83,.34);
     }
 
-    /* =========================================================
-       FOOTER
-       ========================================================= */
-
     .site-footer {
       position: relative;
 
@@ -1313,10 +1489,6 @@
       pointer-events: none;
     }
 
-    /* =========================================================
-       RESPONSIVE
-       ========================================================= */
-
     @media (max-width: 1050px) {
       .desktop-nav {
         display: none;
@@ -1357,6 +1529,20 @@
         min-height: auto;
         border-right: 0;
         border-bottom: 1px solid var(--line);
+      }
+
+      .knowledge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-background-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .about-second-photo {
+        position: relative;
+        top: auto;
+        max-width: 650px;
       }
 
       .contact-grid {
@@ -1500,10 +1686,6 @@
       }
     }
 
-    /* =========================================================
-       ACCESSIBILITY / REDUCED MOTION
-       ========================================================= */
-
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
@@ -1519,10 +1701,6 @@
 
 <body>
 
-  <!-- =======================================================
-       HEADER
-       ======================================================= -->
-
   <header class="site-header" id="siteHeader">
     <div class="header-inner container">
 
@@ -1532,12 +1710,8 @@
         data-page="home"
         aria-label="Glowsome Relationships home"
       >
-        <!--
-          WEBSITE LOGO:
-          Use the version that says GLOWSOME RELATIONSHIPS.
-        -->
         <img
-          src="assets/DCB3BB74-840F-48D5-A076-90D64A282AE4.png"
+          src="assets/glowsome-relationships-logo.png"
           alt="Glowsome Relationships"
         >
       </a>
@@ -1566,10 +1740,6 @@
   </header>
 
 
-  <!-- =======================================================
-       MOBILE MENU
-       ======================================================= -->
-
   <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-inner">
 
@@ -1587,17 +1757,13 @@
   </div>
 
 
-  <!-- =======================================================
-       HOME
-       ======================================================= -->
+  <!-- HOME -->
 
   <main
     class="scene active"
     id="home"
     data-scene="home"
   >
-
-    <!-- HERO -->
 
     <section class="hero">
       <div class="hero-content container">
@@ -1628,7 +1794,6 @@
             <span class="arrow">↗</span>
           </a>
 
-          <!-- App Store link placeholder -->
           <a
             href="#"
             class="text-link placeholder-link"
@@ -1642,8 +1807,6 @@
       </div>
     </section>
 
-
-    <!-- NURTURING -->
 
     <section class="home-statement">
       <div class="container">
@@ -1661,8 +1824,6 @@
     </section>
 
 
-    <!-- ABOUT LUCIE -->
-
     <section class="lucie-home">
 
       <div class="lucie-home-copy">
@@ -1672,16 +1833,16 @@
         </p>
 
         <h2>
-          Why I built
-          <span class="italic">Glowie?</span>
+          Who built Glowie
+          <span class="italic">and why?</span>
         </h2>
 
         <div class="copy">
 
           <p>
-            I created Glowie based on my knowledge as a systemic couples
-            psychotherapist and coach based in Prague, working with clients
-            from all over the world.
+            My name is Lucie Rust and I created Glowie based on my knowledge
+            as a systemic couples psychotherapist and coach based in Prague,
+            working with clients from all over the world.
           </p>
 
           <p>
@@ -1713,17 +1874,14 @@
       </div>
 
       <div class="lucie-home-photo">
-        <!-- Replace lucie.jpg with Lucie's chosen photograph -->
         <img
-          src="assets/4-IMG_3889-Edit-top-denoise-faceai-Edit.jpg"
+          src="assets/lucie.jpg"
           alt="Lucie Rust"
         >
       </div>
 
     </section>
 
-
-    <!-- RECONNECTION PROJECT -->
 
     <section class="reconnection-home">
 
@@ -1823,9 +1981,7 @@
   </main>
 
 
-  <!-- =======================================================
-       GLOWIE PAGE
-       ======================================================= -->
+  <!-- GLOWIE -->
 
   <main
     class="scene"
@@ -1852,6 +2008,67 @@
           perspectives.
         </p>
 
+      </div>
+    </section>
+
+
+    <section class="glowie-expanded">
+      <div class="container">
+        <div class="glowie-expanded-inner">
+
+          <p class="eyebrow">
+            Your journey
+          </p>
+
+          <h2>
+            Gentle, curious
+            <span class="italic">dialogue.</span>
+          </h2>
+
+          <p>
+            Glowie accompanies you on your journey of self-discovery through
+            gentle, curious dialogue. She helps you:
+          </p>
+
+          <ul class="glowie-benefits">
+            <li>Recognize recurring relationship patterns and their roots</li>
+            <li>Deepen understanding of your emotions and bodily signals</li>
+            <li>Find new perspectives in challenging situations</li>
+            <li>Cultivate a kinder relationship with yourself and others</li>
+            <li>Integrate therapy insights into your daily life</li>
+          </ul>
+
+          <p>
+            Unlike ordinary chatbots, Glowie works systemically – seeing you
+            as the expert on your own life, asking open, reflective questions,
+            and supporting your own discoveries without instructions or
+            "right answers.”
+          </p>
+
+          <p>
+            Your conversations with Glowie remain completely private.
+            Information you share is only used to personalize your experience.
+            It's not shared with third parties or used for purposes other than
+            providing this service.
+          </p>
+
+          <p>
+            Unlike me, she's available whenever you need space for reflection,
+            between sessions, or when seeking support processing new insights.
+          </p>
+
+          <p>
+            Glowie isn't a replacement for therapy, but a valuable guide
+            extending the therapeutic space beyond our meetings and supporting
+            the continuity of your growth.
+          </p>
+
+          <p>
+            Join the community of clients already discovering deeper layers of
+            self-understanding with Glowie's compassionate support.
+          </p>
+
+        </div>
       </div>
     </section>
 
@@ -1913,6 +2130,124 @@
     </section>
 
 
+    <section class="knowledge-section">
+      <div class="container">
+
+        <p class="eyebrow">
+          Glowie's foundations
+        </p>
+
+        <h2>
+          What knowledge is Glowie
+          <span class="italic">based on?</span>
+        </h2>
+
+        <p class="knowledge-intro">
+          Glowie is built on my professional practice and integrates
+          knowledge from many areas:
+        </p>
+
+
+        <div class="knowledge-grid">
+
+          <article class="knowledge-item">
+            <h3>Systemic and Narrative Therapy</h3>
+
+            <p>
+              Works with you in the context of your relationships and systems,
+              helping you transform limiting stories into empowering ones and
+              see yourself and situations from new angles.
+            </p>
+          </article>
+
+
+          <article class="knowledge-item">
+            <h3>Attachment Theory and Relationship Dynamics</h3>
+
+            <p>
+              Helps understand your relationship patterns, attachment styles,
+              and recurring interaction cycles in close relationships.
+            </p>
+          </article>
+
+
+          <article class="knowledge-item">
+            <h3>Communication and Emotional Regulation</h3>
+
+            <p>
+              Supports the development of healthy communication patterns,
+              emotional processing, and building emotional resilience in
+              relationships and with yourself.
+            </p>
+          </article>
+
+
+          <article class="knowledge-item">
+            <h3>Internal Family Systems (IFS)</h3>
+
+            <p>
+              Supports you in recognizing different "parts" of your personality,
+              their motivations and needs, and cultivating internal dialogue
+              between them.
+            </p>
+          </article>
+
+
+          <article class="knowledge-item">
+            <h3>Embodiment and Somatic Awareness</h3>
+
+            <p>
+              Helps you notice bodily signals, work with physical experiences,
+              and use bodily wisdom as a source of information.
+            </p>
+          </article>
+
+
+          <article class="knowledge-item">
+            <h3>Sex Therapy best of practices</h3>
+
+            <p>
+              Provides a respectful space for exploring desire patterns,
+              pleasure, bodily responses, and intimate boundaries. Supports
+              untangling cultural messages about sexuality while honoring
+              your unique experience and personal values.
+            </p>
+          </article>
+
+
+          <article class="knowledge-item">
+            <h3>Female Sexuality and Cyclical Changes</h3>
+
+            <p>
+              Includes understanding specific aspects of female desire,
+              libido, and the influence of hormonal and life cycles on
+              sexuality and relationships.
+            </p>
+          </article>
+
+
+          <article class="knowledge-item">
+            <h3>Ethical Non-monogamy and Diverse Relationship Structures</h3>
+
+            <p>
+              Offers a respectful space for exploring various relationship
+              configurations based on consent, communication, and ethics.
+            </p>
+          </article>
+
+        </div>
+
+
+        <p class="knowledge-ending">
+          Glowie aims to work systemically – seeing you as the expert on your
+          own life, using curious, open questions, and supporting your own
+          discoveries without presenting universal truths or instructions.
+        </p>
+
+      </div>
+    </section>
+
+
     <section class="glowie-download">
       <div class="container">
 
@@ -1926,7 +2261,6 @@
           <em>Neither does Glowie.</em>
         </h2>
 
-        <!-- Replace # with App Store URL later -->
         <a
           href="#"
           class="pill-button download-white placeholder-link"
@@ -1941,9 +2275,7 @@
   </main>
 
 
-  <!-- =======================================================
-       ABOUT LUCIE
-       ======================================================= -->
+  <!-- ABOUT LUCIE -->
 
   <main
     class="scene"
@@ -2033,19 +2365,217 @@
 
       <div class="about-photo">
         <img
-          src="assets/25-IMG_3971-top-denoise-faceai.jpg"
+          src="assets/lucie.jpg"
           alt="Lucie Rust"
         >
       </div>
 
     </section>
 
+
+    <section class="about-background">
+      <div class="container">
+
+        <div class="about-background-header">
+
+          <p class="eyebrow">
+            Behind the scenes of making Lucie
+          </p>
+
+          <h2>
+            My professional
+            <span class="italic">background.</span>
+          </h2>
+
+        </div>
+
+
+        <div class="about-background-layout">
+
+          <div class="about-background-copy">
+
+            <p>
+              For a long time, my work revolved around understanding how people
+              think, feel, and make decisions. At the beginning of my career
+              this curiosity led me into the world of communication,
+              advertising and research, where creativity, storytelling, and
+              experimentation are part of everyday work. Over the years I came
+              to realise that the most interesting stories are not the ones we
+              create for audiences, but the ones people live inside their
+              relationships.
+            </p>
+
+            <p>
+              Over the past 6 years I have spent thousands of hours sitting
+              with couples a couples therapist and a coach based in the heart
+              of Europe. I work with clients from around the world, while my
+              main private practice is rooted in the Czech Republic, where I
+              also meet clients face-to-face.
+            </p>
+
+            <p>
+              My professional path began with a Master’s degree in Communication
+              from Aston University and nearly two decades spent studying human
+              behaviour and communication across cultures. Working in the Czech
+              Republic, Germany, Ukraine, and the United Arab Emirates gave me
+              a deep appreciation for how differently people understand
+              closeness, freedom, and commitment.
+            </p>
+
+            <p>
+              At the same time, my curiosity about the human mind was always
+              accompanied by a respect for evidence and research. Over time my
+              professional focus gradually shifted from communication between
+              brands and audiences to communication between people in close
+              relationships. This led me to systemic therapy and further
+              integrative training in couples and family therapy, where I
+              deepened my understanding of intimacy, trust, and the relational
+              dynamics that shape how partners meet each other. Today my work
+              combines evidence-based knowledge about relationships with
+              curiosity, creativity, and a willingness to explore what is
+              unique to each couple.
+            </p>
+
+            <p>
+              I believe relationships are not puzzles to solve but landscapes
+              to explore. Another important lesson along the way was learning
+              the value of slowing down. In a fast-paced world that constantly
+              asks us to analyse, explain, and solve, relationships often need
+              something different — space to pause, notice what is happening
+              beneath the surface, and reconnect with lived experience.
+              Therapy can become a place where this slowing down allows new
+              understanding and possibilities to emerge.
+            </p>
+
+            <p>
+              Beyond my professional work, I am also a mother, partner, sister,
+              daughter, aunt, and friend. Outside the therapy room I recharge
+              through movement and creativity — rock climbing, freeriding,
+              writing, dancing, yoga, and occasionally attempting to sing.
+            </p>
+
+
+            <div class="memberships">
+
+              <h3>
+                Memberships in professional associations:
+              </h3>
+
+              <ul>
+                <li>Czech Association for Psychotherapy (CAP)</li>
+                <li>British Psychological Society (BPS)</li>
+                <li>INPAT guaranteed couples therapist (Institute for Couples Therapy)</li>
+              </ul>
+
+            </div>
+
+          </div>
+
+
+          <div class="about-second-photo">
+            <img
+              src="assets/lucie-2.jpg"
+              alt="Lucie Rust"
+            >
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="education-section">
+      <div class="container">
+
+        <h2>
+          Below is a list of my education so far
+          <span class="italic">(that journey will never end:-)</span>
+        </h2>
+
+        <ul class="education-list">
+
+          <li>
+            The Art of Therapy: GI Institute, systemic therapy training
+            (850 hours, accredited by CAP and SOFT)
+          </li>
+
+          <li>
+            Integrative family and relationship therapy: GI Institute and
+            Anima Terapie postgraduate training (420 hours, accreditation of
+            family and couples therapist)
+          </li>
+
+          <li>
+            Coaching Certificate by QED, accredited by EMCC
+          </li>
+
+          <li>
+            AC Coaching: Sexual Relationship Coaching for Committed couples
+          </li>
+
+          <li>
+            Crisis Intervention Course
+          </li>
+
+          <li>
+            ACE Nutrition Specialist
+          </li>
+
+          <li>
+            ACE Behaviour Change Specialist
+          </li>
+
+          <li>
+            INPAT workshops: Couples in crisis. Infidelity in Couples therapy.
+            Couple's therapy. Working with the body in couple's therapy.
+            Couple's therapy online. Alternative relationships of the modern
+            times (polygamy and other perks)
+          </li>
+
+          <li>
+            INPAT Individual Courses: Intimacy, Erotica and Sex, Alchemy of
+            Couple’s communication, Boundaries, Couples therapy online,
+            Emotional processes, Infidelity, Separations and Divorces,
+            The Shade and Light of modern relationships, Healing broken
+            emotions, Conflicts and disagreements, Vulnerability,
+            Relationship restart, Forgiveness.
+          </li>
+
+          <li>
+            Kim Anami Intimacy courses (Coming together for couples,
+            Sexual Mastery for him, The Well F***d Woman)
+          </li>
+
+          <li>
+            MSc Psychology (tbf 2026)
+          </li>
+
+          <li>
+            MSc Marketing Management
+          </li>
+
+          <li>
+            Advanced Psychology Course
+          </li>
+
+          <li>
+            Bc International Relations
+          </li>
+
+          <li>
+            ACE Personal Trainer
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
   </main>
 
 
-  <!-- =======================================================
-       RECONNECTION PROJECT PAGE
-       ======================================================= -->
+  <!-- RECONNECTION PROJECT -->
 
   <main
     class="scene"
@@ -2066,8 +2596,7 @@
         </h1>
 
         <p class="intro">
-          Guided courses to help you build meaningful relationships,
-          step by step.
+          In the making.
         </p>
 
       </div>
@@ -2166,9 +2695,7 @@
   </main>
 
 
-  <!-- =======================================================
-       CONTACT PAGE
-       ======================================================= -->
+  <!-- CONTACT -->
 
   <main
     class="scene contact-page"
@@ -2223,10 +2750,6 @@
   </main>
 
 
-  <!-- =======================================================
-       FOOTER
-       ======================================================= -->
-
   <footer class="site-footer">
 
     <div class="footer-top container">
@@ -2278,15 +2801,6 @@
 
 
   <script>
-    /* =========================================================
-       GLOWSOME WEBSITE JAVASCRIPT
-       ========================================================= */
-
-
-    /* ---------------------------------------------------------
-       ELEMENTS
-       --------------------------------------------------------- */
-
     const scenes = document.querySelectorAll("[data-scene]");
     const pageLinks = document.querySelectorAll("[data-page]");
 
@@ -2294,10 +2808,6 @@
     const mobileMenu = document.getElementById("mobileMenu");
     const siteHeader = document.getElementById("siteHeader");
 
-
-    /* ---------------------------------------------------------
-       PAGE NAMES
-       --------------------------------------------------------- */
 
     const pageTitles = {
       home: "Glowsome Relationships",
@@ -2307,10 +2817,6 @@
       contact: "Contact | Glowsome Relationships"
     };
 
-
-    /* ---------------------------------------------------------
-       SHOW PAGE
-       --------------------------------------------------------- */
 
     function showPage(page, updateHash = true) {
 
@@ -2327,14 +2833,10 @@
       }
 
 
-      /* Hide every scene */
-
       scenes.forEach((scene) => {
         scene.classList.remove("active");
       });
 
-
-      /* Show selected scene */
 
       const targetScene = document.querySelector(
         `[data-scene="${page}"]`
@@ -2344,8 +2846,6 @@
         targetScene.classList.add("active");
       }
 
-
-      /* Update navigation */
 
       pageLinks.forEach((link) => {
 
@@ -2358,12 +2858,8 @@
       });
 
 
-      /* Update title */
-
       document.title = pageTitles[page];
 
-
-      /* Update URL */
 
       if (updateHash) {
 
@@ -2383,12 +2879,8 @@
       }
 
 
-      /* Close mobile menu */
-
       closeMenu();
 
-
-      /* Return to the top */
 
       window.scrollTo({
         top: 0,
@@ -2397,10 +2889,6 @@
 
     }
 
-
-    /* ---------------------------------------------------------
-       NAVIGATION CLICK
-       --------------------------------------------------------- */
 
     pageLinks.forEach((link) => {
 
@@ -2418,10 +2906,6 @@
 
     });
 
-
-    /* ---------------------------------------------------------
-       MOBILE MENU
-       --------------------------------------------------------- */
 
     function openMenu() {
 
@@ -2471,10 +2955,6 @@
     });
 
 
-    /* ---------------------------------------------------------
-       BROWSER BACK / FORWARD
-       --------------------------------------------------------- */
-
     window.addEventListener("popstate", () => {
 
       const page =
@@ -2484,10 +2964,6 @@
 
     });
 
-
-    /* ---------------------------------------------------------
-       HEADER GLASS EFFECT
-       --------------------------------------------------------- */
 
     function updateHeader() {
 
@@ -2507,11 +2983,6 @@
 
     updateHeader();
 
-
-    /* ---------------------------------------------------------
-       EMAIL PLACEHOLDER
-       The form deliberately DOES NOT submit anywhere yet.
-       --------------------------------------------------------- */
 
     const placeholderForms =
       document.querySelectorAll("[data-placeholder-form]");
@@ -2549,10 +3020,6 @@
     });
 
 
-    /* ---------------------------------------------------------
-       PLACEHOLDER APP STORE LINKS
-       --------------------------------------------------------- */
-
     const placeholderLinks =
       document.querySelectorAll(".placeholder-link");
 
@@ -2586,10 +3053,6 @@
     });
 
 
-    /* ---------------------------------------------------------
-       INITIAL PAGE
-       --------------------------------------------------------- */
-
     function loadInitialPage() {
 
       const hash =
@@ -2613,7 +3076,6 @@
     }
 
     loadInitialPage();
-
   </script>
 
 </body>
