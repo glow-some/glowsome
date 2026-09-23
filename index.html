@@ -1909,6 +1909,7 @@
         id="menuButton"
         aria-label="Open navigation"
         aria-expanded="false"
+        aria-controls="mobileMenu"
       >
         <span></span>
         <span></span>
@@ -1918,7 +1919,7 @@
   </header>
 
 
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <div class="mobile-menu-inner">
 
       <nav aria-label="Mobile navigation">
@@ -1937,7 +1938,7 @@
 
   <!-- HOME -->
 
-  <main
+  <section
     class="scene active"
     id="home"
     data-scene="home"
@@ -1973,8 +1974,9 @@
           </a>
 
           <a
-            href="#"
-            class="text-link placeholder-link"
+            href="mailto:glowie@glowsome.com?subject=Glowie%20availability"
+            class="text-link"
+            title="Ask about Glowie availability"
           >
             <span>Download Glowie</span>
             <span class="arrow">↗</span>
@@ -2090,12 +2092,14 @@
 
             <form
               class="notify-form"
-              data-placeholder-form
+              data-email-signup
             >
               <input
                 type="email"
+                name="email"
                 placeholder="your@email.com"
                 aria-label="Email address"
+                autocomplete="email"
                 required
               >
 
@@ -2155,12 +2159,12 @@
 
     </section>
 
-  </main>
+  </section>
 
 
   <!-- GLOWIE -->
 
-  <main
+  <section
     class="scene"
     id="glowie"
     data-scene="glowie"
@@ -2411,8 +2415,9 @@
         </h2>
 
         <a
-          href="#"
-          class="pill-button download-white placeholder-link"
+          href="mailto:glowie@glowsome.com?subject=Glowie%20availability"
+          class="pill-button download-white"
+          title="Ask about Glowie availability"
         >
           <span>Download Glowie</span>
           <span class="arrow">↗</span>
@@ -2421,12 +2426,12 @@
       </div>
     </section>
 
-  </main>
+  </section>
 
 
   <!-- ABOUT LUCIE -->
 
-  <main
+  <section
     class="scene"
     id="about"
     data-scene="about"
@@ -2637,12 +2642,12 @@
 
     </section>
 
-  </main>
+  </section>
 
 
   <!-- RECONNECTION PROJECT -->
 
-  <main
+  <section
     class="scene"
     id="reconnection"
     data-scene="reconnection"
@@ -2705,13 +2710,15 @@
 
             <form
               class="notify-form"
-              data-placeholder-form
+              data-email-signup
             >
 
               <input
                 type="email"
+                name="email"
                 placeholder="your@email.com"
                 aria-label="Email address"
+                autocomplete="email"
                 required
               >
 
@@ -2763,12 +2770,12 @@
 
     </section>
 
-  </main>
+  </section>
 
 
   <!-- CONTACT -->
 
-  <main
+  <section
     class="scene"
     id="contact"
     data-scene="contact"
@@ -2821,12 +2828,12 @@
 
     </section>
 
-  </main>
+  </section>
 
 
   <!-- PRIVACY POLICY -->
 
-  <main
+  <section
     class="scene"
     id="privacy"
     data-scene="privacy"
@@ -3267,9 +3274,9 @@
 
     </section>
 
-  </main>  <!-- TERMS OF SERVICE -->
+  </section>  <!-- TERMS OF SERVICE -->
 
-  <main
+  <section
     class="scene"
     id="terms"
     data-scene="terms"
@@ -3780,7 +3787,7 @@
 
     </section>
 
-  </main>
+  </section>
 
 
   <!-- FOOTER -->
@@ -3882,6 +3889,13 @@
     function closeMenu() {
       document.body.classList.remove("menu-open");
 
+      const mobileMenu =
+        document.getElementById("mobileMenu");
+
+      if (mobileMenu) {
+        mobileMenu.setAttribute("aria-hidden", "true");
+      }
+
       if (menuButton) {
         menuButton.setAttribute(
           "aria-expanded",
@@ -3898,6 +3912,13 @@
 
     function openMenu() {
       document.body.classList.add("menu-open");
+
+      const mobileMenu =
+        document.getElementById("mobileMenu");
+
+      if (mobileMenu) {
+        mobileMenu.setAttribute("aria-hidden", "false");
+      }
 
       if (menuButton) {
         menuButton.setAttribute(
@@ -3990,9 +4011,14 @@
       }
 
 
+      const reduceMotion =
+        window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
       window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        behavior: reduceMotion ? "auto" : "smooth"
       });
 
     }
@@ -4098,12 +4124,28 @@
     );
 
 
+    window.addEventListener(
+      "resize",
+      () => {
+        if (
+          window.innerWidth > 1050 &&
+          document.body.classList.contains(
+            "menu-open"
+          )
+        ) {
+          closeMenu();
+        }
+      },
+      { passive: true }
+    );
+
+
     handleHeader();
 
 
     document
       .querySelectorAll(
-        "[data-placeholder-form]"
+        "[data-email-signup]"
       )
       .forEach((form) => {
 
@@ -4113,35 +4155,44 @@
 
             event.preventDefault();
 
+            if (!form.reportValidity()) {
+              return;
+            }
+
+            const emailInput =
+              form.querySelector(
+                'input[type="email"]'
+              );
+
             const feedback =
               form.parentElement.querySelector(
                 ".notify-feedback"
               );
 
-            if (feedback) {
-              feedback.textContent =
-                "Thank you. We'll let you know when it's ready.";
+            if (!emailInput) {
+              return;
             }
 
-            form.reset();
+            const email =
+              emailInput.value.trim();
 
-          }
-        );
+            const subject =
+              encodeURIComponent(
+                "Glowie updates signup"
+              );
 
-      });
+            const body =
+              encodeURIComponent(
+                `Please add ${email} to the Glowie updates list.`
+              );
 
+            if (feedback) {
+              feedback.textContent =
+                "Your email app will open so you can confirm your request.";
+            }
 
-    document
-      .querySelectorAll(
-        ".placeholder-link"
-      )
-      .forEach((link) => {
-
-        link.addEventListener(
-          "click",
-          (event) => {
-
-            event.preventDefault();
+            window.location.href =
+              `mailto:glowie@glowsome.com?subject=${subject}&body=${body}`;
 
           }
         );
