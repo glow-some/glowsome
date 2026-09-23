@@ -8,7 +8,7 @@
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
-  <title>Glowsome</title>
+  <title>Glowsome Relationships</title>
 
   <meta
     name="description"
@@ -768,6 +768,7 @@
       margin-top: 12px;
 
       color: var(--berry);
+
       font-size: 13px;
     }
 
@@ -777,7 +778,9 @@
       gap: 27px;
 
       margin-top: 95px;
-    }    .course-card {
+    }
+
+    .course-card {
       position: relative;
 
       min-height: 330px;
@@ -985,6 +988,7 @@
 
     .glowie-benefits li {
       position: relative;
+
       margin: 0;
       padding: 18px 0 18px 30px;
 
@@ -1155,6 +1159,152 @@
       color: var(--berry);
 
       border-color: white;
+    }
+
+    /* LEGAL PAGES */
+
+    .legal-page {
+      padding:
+        clamp(165px, 15vw, 230px)
+        0
+        clamp(110px, 11vw, 180px);
+
+      background: var(--warm-white);
+    }
+
+    .legal-inner {
+      max-width: 980px;
+    }
+
+    .legal-page .eyebrow {
+      margin-bottom: 36px;
+    }
+
+    .legal-page h1 {
+      max-width: 950px;
+
+      margin: 0 0 24px;
+
+      font-size: clamp(58px, 7vw, 112px);
+      font-weight: 350;
+      line-height: .95;
+
+      letter-spacing: -.065em;
+    }
+
+    .legal-date {
+      margin: 0 0 70px;
+
+      color: var(--grey-light);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .legal-content {
+      max-width: 900px;
+    }
+
+    .legal-content h2 {
+      margin: 60px 0 20px;
+
+      color: var(--ink);
+
+      font-size: clamp(27px, 2.4vw, 38px);
+      font-weight: 450;
+      line-height: 1.2;
+
+      letter-spacing: -.035em;
+    }
+
+    .legal-content h3 {
+      margin: 40px 0 15px;
+
+      color: var(--ink);
+
+      font-size: 21px;
+      font-weight: 600;
+      line-height: 1.35;
+
+      letter-spacing: -.02em;
+    }
+
+    .legal-content p {
+      margin: 0 0 20px;
+
+      color: var(--grey);
+
+      font-size: 17px;
+      line-height: 1.72;
+    }
+
+    .legal-content ul {
+      margin: 0 0 25px;
+      padding-left: 24px;
+
+      color: var(--grey);
+    }
+
+    .legal-content li {
+      margin-bottom: 10px;
+
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .legal-content a {
+      color: var(--berry);
+
+      text-decoration: underline;
+      text-decoration-color: rgba(187,40,83,.3);
+      text-underline-offset: 3px;
+    }
+
+    .legal-content a:hover {
+      text-decoration-color: var(--berry);
+    }
+
+    .legal-summary {
+      margin-top: 65px;
+      padding: 35px;
+
+      background: var(--berry-pale);
+
+      border-radius: 25px;
+    }
+
+    .legal-summary h2 {
+      margin-top: 0;
+    }
+
+    .legal-page-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 22px 35px;
+
+      margin-top: 70px;
+      padding-top: 35px;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .legal-page-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      padding-bottom: 4px;
+
+      color: #5f5f5f;
+
+      font-size: 15px;
+
+      border-bottom: 1px solid #c6c2c0;
+    }
+
+    .legal-page-links a:hover {
+      color: var(--berry);
+      border-color: var(--berry);
     }
 
     .about-main {
@@ -1555,7 +1705,8 @@
       .contact-heading {
         border-right: 0;
         border-bottom: 1px solid var(--line);
-      }    }
+      }
+    }
 
     @media (max-width: 760px) {
       .header-inner {
@@ -1640,6 +1791,31 @@
 
       .page-hero h1 {
         font-size: clamp(58px, 15vw, 88px);
+      }
+
+      .legal-page {
+        padding:
+          135px
+          0
+          90px;
+      }
+
+      .legal-page h1 {
+        font-size: clamp(53px, 14vw, 78px);
+      }
+
+      .legal-date {
+        margin-bottom: 50px;
+      }
+
+      .legal-content p,
+      .legal-content li {
+        font-size: 16px;
+      }
+
+      .legal-summary {
+        padding: 25px;
+        border-radius: 20px;
       }
 
       .contact-page {
@@ -1935,7 +2111,6 @@
             ></div>
 
           </div>
-
         </div>
 
 
@@ -2129,111 +2304,83 @@
 
       </div>
 
-    </section>
-
-
-    <section class="knowledge-section">
+    </section>    <section class="knowledge-section">
       <div class="container">
 
         <p class="eyebrow">
-          Glowie's foundations
+          The thinking behind Glowie
         </p>
 
         <h2>
-          What knowledge is Glowie
-          <span class="italic">based on?</span>
+          Grounded in systemic
+          <span class="italic">therapy principles.</span>
         </h2>
 
         <p class="knowledge-intro">
-          Glowie is built on my professional practice and integrates
-          knowledge from many areas:
+          Glowie is designed around a systemic understanding of relationships.
+          Rather than looking for simple causes or quick fixes, she encourages
+          curiosity about the wider patterns, contexts and connections that
+          shape how we experience ourselves and one another.
         </p>
 
 
         <div class="knowledge-grid">
 
           <article class="knowledge-item">
-            <h3>Systemic and Narrative Therapy</h3>
-
+            <h3>Curiosity over judgement</h3>
             <p>
-              Works with you in the context of your relationships and systems,
-              helping you transform limiting stories into empowering ones and
-              see yourself and situations from new angles.
+              Glowie approaches your experiences with curiosity rather than
+              deciding what is right or wrong. The aim is to create room for
+              reflection, not judgement.
             </p>
           </article>
 
 
           <article class="knowledge-item">
-            <h3>Attachment Theory and Relationship Dynamics</h3>
-
+            <h3>Multiple perspectives</h3>
             <p>
-              Helps understand your relationship patterns, attachment styles,
-              and recurring interaction cycles in close relationships.
+              Relationships rarely have one single truth. Glowie can help you
+              consider different viewpoints and notice how the same situation
+              might be understood in more than one way.
             </p>
           </article>
 
 
           <article class="knowledge-item">
-            <h3>Communication and Emotional Regulation</h3>
-
+            <h3>Patterns and connections</h3>
             <p>
-              Supports the development of healthy communication patterns,
-              emotional processing, and building emotional resilience in
-              relationships and with yourself.
+              Instead of treating moments in isolation, Glowie encourages you
+              to notice recurring patterns and how thoughts, feelings,
+              behaviours and relationships influence one another.
             </p>
           </article>
 
 
           <article class="knowledge-item">
-            <h3>Internal Family Systems (IFS)</h3>
-
+            <h3>You remain the expert</h3>
             <p>
-              Supports you in recognizing different "parts" of your personality,
-              their motivations and needs, and cultivating internal dialogue
-              between them.
+              Glowie does not position herself as the authority on your life.
+              Her role is to support your exploration so that your own
+              understanding can develop.
             </p>
           </article>
 
 
           <article class="knowledge-item">
-            <h3>Embodiment and Somatic Awareness</h3>
-
+            <h3>Questions rather than instructions</h3>
             <p>
-              Helps you notice bodily signals, work with physical experiences,
-              and use bodily wisdom as a source of information.
+              Glowie is designed to ask thoughtful, open questions rather than
+              give prescriptive advice or tell you what you should do.
             </p>
           </article>
 
 
           <article class="knowledge-item">
-            <h3>Sex Therapy best of practices</h3>
-
+            <h3>Space between sessions</h3>
             <p>
-              Provides a respectful space for exploring desire patterns,
-              pleasure, bodily responses, and intimate boundaries. Supports
-              untangling cultural messages about sexuality while honoring
-              your unique experience and personal values.
-            </p>
-          </article>
-
-
-          <article class="knowledge-item">
-            <h3>Female Sexuality and Cyclical Changes</h3>
-
-            <p>
-              Includes understanding specific aspects of female desire,
-              libido, and the influence of hormonal and life cycles on
-              sexuality and relationships.
-            </p>
-          </article>
-
-
-          <article class="knowledge-item">
-            <h3>Ethical Non-monogamy and Diverse Relationship Structures</h3>
-
-            <p>
-              Offers a respectful space for exploring various relationship
-              configurations based on consent, communication, and ethics.
+              Reflection does not only happen during therapy. Glowie provides
+              a space to continue exploring thoughts, emotions and discoveries
+              whenever they arise.
             </p>
           </article>
 
@@ -2241,9 +2388,9 @@
 
 
         <p class="knowledge-ending">
-          Glowie aims to work systemically – seeing you as the expert on your
-          own life, using curious, open questions, and supporting your own
-          discoveries without presenting universal truths or instructions.
+          Glowie is not designed to replace the human relationship at the
+          heart of therapy. She offers another space for reflection, helping
+          you stay connected to your own process between conversations.
         </p>
 
       </div>
@@ -2254,13 +2401,13 @@
       <div class="container">
 
         <p class="eyebrow">
-          Available soon
+          Glowie
         </p>
 
         <h2>
           Your relationship doesn't stop
           between conversations.
-          <em>Neither does Glowie.</em>
+          <span class="italic">Neither does Glowie.</span>
         </h2>
 
         <a
@@ -2293,13 +2440,15 @@
         </p>
 
         <h1>
-          The person
-          <span class="italic">behind Glowie.</span>
+          Relationships are where
+          we meet ourselves
+          <span class="italic">most deeply.</span>
         </h1>
 
         <p class="intro">
-          Systemic couples psychotherapist and coach based in Prague,
-          working with individuals and couples from around the world.
+          I work with individuals and couples who want to understand
+          themselves and their relationships more deeply, particularly when
+          familiar patterns no longer seem to work.
         </p>
 
       </div>
@@ -2311,62 +2460,49 @@
       <div class="about-copy">
 
         <p class="eyebrow">
-          Behind the scenes
+          My approach
         </p>
 
         <h2>
-          Why I built
-          <span class="italic">Glowie?</span>
+          A space for
+          <span class="italic">curiosity.</span>
         </h2>
 
         <p>
-          I created Glowie based on my knowledge as a systemic couples
-          psychotherapist and coach based in Prague, working with clients
-          from all over the world.
+          My name is Lucie Rust. I am a systemic couples psychotherapist and
+          coach based in Prague, working with clients from all over the world.
         </p>
 
         <p>
-          After years of working with individuals and couples on themes of
-          intimacy, relationships and emotional well-being, I noticed a
-          recurring gap: the space between therapy sessions, where people
-          are left alone with their thoughts, questions and feelings,
-          without a safe place to explore them.
+          My work focuses on relationships, intimacy, emotional well-being and
+          the patterns that shape how we connect with ourselves and with the
+          people closest to us.
         </p>
 
         <p>
-          Glowie was built to fill that space. She is a warm, non-directive          AI companion grounded in systemic therapy principles, designed to
-          support self-reflection, emotional exploration and deeper
-          self-understanding.
+          I believe that meaningful change often begins not with finding the
+          right answer, but with becoming curious about the questions we have
+          stopped asking.
         </p>
 
         <p>
-          She does not give advice or diagnoses. She asks questions, holds
-          space and accompanies users at their own pace.
+          Systemic therapy offers a way of looking beyond the individual in
+          isolation. It explores relationships, contexts, histories and the
+          patterns that develop between people over time.
         </p>
 
         <p>
-          My goal was to create something that extends the therapeutic
-          process into everyday life, making reflective support accessible
-          to anyone who needs it, not just those who can afford regular
-          therapy sessions.
+          Rather than telling you what to do, my role is to create a space
+          where new perspectives can emerge and where you can develop a deeper
+          understanding of your own experience.
         </p>
-
-        <a
-          href="https://lucierust.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="lucie-link"
-        >
-          <span>More information at lucierust.com</span>
-          <span class="circle-arrow">↗</span>
-        </a>
 
       </div>
 
 
       <div class="about-photo">
         <img
-          src="assets/25-IMG_3971-top-denoise-faceai.jpg"
+          src="assets/4-IMG_3889-Edit-top-denoise-faceai-Edit.jpg"
           alt="Lucie Rust"
         >
       </div>
@@ -2375,17 +2511,18 @@
 
 
     <section class="about-background">
+
       <div class="container">
 
         <div class="about-background-header">
 
           <p class="eyebrow">
-            Behind the scenes of making Lucie
+            Behind the work
           </p>
 
           <h2>
-            My professional
-            <span class="italic">background.</span>
+            Experience, training and
+            <span class="italic">continued learning.</span>
           </h2>
 
         </div>
@@ -2396,76 +2533,46 @@
           <div class="about-background-copy">
 
             <p>
-              For a long time, my work revolved around understanding how people
-              think, feel, and make decisions. At the beginning of my career
-              this curiosity led me into the world of communication,
-              advertising and research, where creativity, storytelling, and
-              experimentation are part of everyday work. Over the years I came
-              to realise that the most interesting stories are not the ones we
-              create for audiences, but the ones people live inside their
-              relationships.
+              My professional background combines systemic psychotherapy,
+              couples work and coaching, with a particular interest in how
+              relationships shape our sense of self and how patterns can
+              change when they are understood differently.
             </p>
 
             <p>
-              Over the past 6 years I have spent thousands of hours sitting
-              with couples a couples therapist and a coach based in the heart
-              of Europe. I work with clients from around the world, while my
-              main private practice is rooted in the Czech Republic, where I
-              also meet clients face-to-face.
+              I work with people from different cultures, backgrounds and
+              stages of life. My international practice has strengthened my
+              belief that there is rarely one correct way to understand a
+              relationship. Context matters, culture matters and the meanings
+              we give to our experiences matter.
             </p>
 
             <p>
-              My professional path began with a Master’s degree in Communication
-              from Aston University and nearly two decades spent studying human
-              behaviour and communication across cultures. Working in the Czech
-              Republic, Germany, Ukraine, and the United Arab Emirates gave me
-              a deep appreciation for how differently people understand
-              closeness, freedom, and commitment.
-            </p>
-
-            <p>
-              At the same time, my curiosity about the human mind was always
-              accompanied by a respect for evidence and research. Over time my
-              professional focus gradually shifted from communication between
-              brands and audiences to communication between people in close
-              relationships. This led me to systemic therapy and further
-              integrative training in couples and family therapy, where I
-              deepened my understanding of intimacy, trust, and the relational
-              dynamics that shape how partners meet each other. Today my work
-              combines evidence-based knowledge about relationships with
-              curiosity, creativity, and a willingness to explore what is
-              unique to each couple.
-            </p>
-
-            <p>
-              I believe relationships are not puzzles to solve but landscapes
-              to explore. Another important lesson along the way was learning
-              the value of slowing down. In a fast-paced world that constantly
-              asks us to analyse, explain, and solve, relationships often need
-              something different — space to pause, notice what is happening
-              beneath the surface, and reconnect with lived experience.
-              Therapy can become a place where this slowing down allows new
-              understanding and possibilities to emerge.
-            </p>
-
-            <p>
-              Beyond my professional work, I am also a mother, partner, sister,
-              daughter, aunt, and friend. Outside the therapy room I recharge
-              through movement and creativity — rock climbing, freeriding,
-              writing, dancing, yoga, and occasionally attempting to sing.
+              I continue to develop my practice through supervision, further
+              training and engagement with current thinking in systemic and
+              relationship therapy.
             </p>
 
 
             <div class="memberships">
 
               <h3>
-                Memberships in professional associations:
+                Professional memberships
               </h3>
 
               <ul>
-                <li>Czech Association for Psychotherapy (CAP)</li>
-                <li>British Psychological Society (BPS)</li>
-                <li>INPAT guaranteed couples therapist (Institute for Couples Therapy)</li>
+                <li>
+                  Professional systemic psychotherapy and counselling
+                  affiliations
+                </li>
+
+                <li>
+                  Ongoing professional supervision and continuing education
+                </li>
+
+                <li>
+                  International practice with individuals and couples
+                </li>
               </ul>
 
             </div>
@@ -2475,7 +2582,7 @@
 
           <div class="about-second-photo">
             <img
-              src="assets/48-IMG_4135-Enhanced-NR-2-top-faceai-sharpen.jpg"
+              src="assets/4-IMG_3889-Edit-top-denoise-faceai-Edit.jpg"
               alt="Lucie Rust"
             >
           </div>
@@ -2483,94 +2590,51 @@
         </div>
 
       </div>
+
     </section>
 
 
     <section class="education-section">
+
       <div class="container">
 
+        <p class="eyebrow">
+          Training
+        </p>
+
         <h2>
-          Below is a list of my education so far
-          <span class="italic">(that journey will never end:-)</span>
+          A practice shaped by
+          <span class="italic">learning and reflection.</span>
         </h2>
 
-        <ul class="education-list">
+        <div class="education-list">
 
-          <li>
-            The Art of Therapy: GI Institute, systemic therapy training
-            (850 hours, accredited by CAP and SOFT)
-          </li>
+          <ul class="education-list">
 
-          <li>
-            Integrative family and relationship therapy: GI Institute and
-            Anima Terapie postgraduate training (420 hours, accreditation of
-            family and couples therapist)
-          </li>
+            <li>
+              Systemic psychotherapy and relationship-focused therapeutic
+              training
+            </li>
 
-          <li>
-            Coaching Certificate by QED, accredited by EMCC
-          </li>
+            <li>
+              Couples therapy and work with relationship dynamics
+            </li>
 
-          <li>
-            AC Coaching: Sexual Relationship Coaching for Committed couples
-          </li>
+            <li>
+              Coaching and reflective practice
+            </li>
 
-          <li>
-            Crisis Intervention Course
-          </li>
+            <li>
+              Continued professional development, supervision and specialist
+              training
+            </li>
 
-          <li>
-            ACE Nutrition Specialist
-          </li>
+          </ul>
 
-          <li>
-            ACE Behaviour Change Specialist
-          </li>
-
-          <li>
-            INPAT workshops: Couples in crisis. Infidelity in Couples therapy.
-            Couple's therapy. Working with the body in couple's therapy.
-            Couple's therapy online. Alternative relationships of the modern
-            times (polygamy and other perks)
-          </li>
-
-          <li>
-            INPAT Individual Courses: Intimacy, Erotica and Sex, Alchemy of
-            Couple’s communication, Boundaries, Couples therapy online,
-            Emotional processes, Infidelity, Separations and Divorces,
-            The Shade and Light of modern relationships, Healing broken
-            emotions, Conflicts and disagreements, Vulnerability,
-            Relationship restart, Forgiveness.
-          </li>
-
-          <li>
-            Kim Anami Intimacy courses (Coming together for couples,
-            Sexual Mastery for him, The Well F***d Woman)
-          </li>
-
-          <li>
-            MSc Psychology (tbf 2026)
-          </li>
-
-          <li>
-            MSc Marketing Management
-          </li>
-
-          <li>
-            Advanced Psychology Course
-          </li>
-
-          <li>
-            Bc International Relations
-          </li>
-
-          <li>
-            ACE Personal Trainer
-          </li>
-
-        </ul>
+        </div>
 
       </div>
+
     </section>
 
   </main>
@@ -2592,12 +2656,14 @@
         </p>
 
         <h1>
-          An academy is
-          <span class="italic">growing.</span>
+          Guided ways back to
+          <span class="italic">connection.</span>
         </h1>
 
         <p class="intro">
-          In the making.
+          A growing collection of guided courses designed to help you
+          understand relationship patterns, deepen connection and bring
+          reflection into everyday life.
         </p>
 
       </div>
@@ -2617,8 +2683,8 @@
             </p>
 
             <h2>
-              Reconnect with what
-              <span class="italic">matters.</span>
+              An academy is
+              <span class="italic">growing.</span>
             </h2>
 
           </div>
@@ -2627,20 +2693,21 @@
           <div class="reconnection-info">
 
             <p>
-              The Reconnection Project is growing into a collection of
-              guided courses designed to help you understand yourself,
-              strengthen relationships and create meaningful change one
-              step at a time.
+              The Reconnection Project is being developed as a series of
+              thoughtful, guided courses that you can explore in your own
+              time.
             </p>
 
-            <p style="margin-top:24px;">
-              Leave your email and we'll let you know the moment doors open.
+            <p style="margin-top: 24px;">
+              Leave your email and we'll let you know when the first courses
+              are ready.
             </p>
 
             <form
               class="notify-form"
               data-placeholder-form
             >
+
               <input
                 type="email"
                 placeholder="your@email.com"
@@ -2652,6 +2719,7 @@
                 Notify me
                 <span>→</span>
               </button>
+
             </form>
 
             <div
@@ -2673,12 +2741,14 @@
             </div>
           </article>
 
+
           <article class="course-card">
             <div class="course-card-content">
               <p>Coming soon</p>
               <h3>Module 2</h3>
             </div>
           </article>
+
 
           <article class="course-card">
             <div class="course-card-content">
@@ -2699,50 +2769,53 @@
   <!-- CONTACT -->
 
   <main
-    class="scene contact-page"
+    class="scene"
     id="contact"
     data-scene="contact"
   >
 
-    <section class="contact-grid">
+    <section class="contact-page">
 
-      <div class="contact-heading">
+      <div class="contact-grid">
 
-        <p class="eyebrow">
-          Contact
-        </p>
+        <div class="contact-heading">
 
-        <h1>
-          Let's
-          <span class="italic">connect.</span>
-        </h1>
+          <p class="eyebrow">
+            Contact
+          </p>
 
-      </div>
+          <h1>
+            Let's start a
+            <span class="italic">conversation.</span>
+          </h1>
+
+        </div>
 
 
-      <div class="contact-details">
+        <div class="contact-details">
 
-        <p>
-          Glowsome s.r.o.<br>
-          Czech Republic
-        </p>
+          <p>
+            If you would like to ask a question about therapy, Glowie or the
+            Reconnection Project, you are welcome to get in touch.
+          </p>
 
-        <a
-          class="contact-email"
-          href="mailto:glowie@glowsome.com"
-        >
-          glowie@glowsome.com
-        </a>
+          <a
+            href="mailto:glowie@glowsome.com"
+            class="contact-email"
+          >
+            glowie@glowsome.com
+          </a>
 
-        <a
-          href="https://lucierust.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-link"
-        >
-          Visit lucierust.com
-          <span class="arrow">↗</span>
-        </a>
+          <a
+            href="#about"
+            class="text-link"
+            data-page="about"
+          >
+            More about Lucie
+            <span class="arrow">↗</span>
+          </a>
+
+        </div>
 
       </div>
 
@@ -2751,6 +2824,967 @@
   </main>
 
 
+  <!-- PRIVACY POLICY -->
+
+  <main
+    class="scene"
+    id="privacy"
+    data-scene="privacy"
+  >
+
+    <section class="legal-page">
+
+      <div class="container">
+        <div class="legal-inner">
+
+          <p class="eyebrow">
+            Glowie
+          </p>
+
+          <h1>
+            Privacy
+            <span class="italic">Policy.</span>
+          </h1>
+
+          <p class="legal-date">
+            Last updated: September 2026
+          </p>
+
+
+          <div class="legal-content">
+
+            <p>
+              This Privacy Policy explains how Glowsome s.r.o. ("Glowsome",
+              "we", "us" or "our") collects, uses, stores and protects your
+              personal data when you use Glowie.
+            </p>
+
+
+            <h2>
+              1. Who we are
+            </h2>
+
+            <p>
+              Glowie is operated by Glowsome s.r.o., U žlábku 174, Prague 5,
+              155 31, Czech Republic, company ID 09021965.
+            </p>
+
+            <p>
+              If you have questions about this Privacy Policy or the way your
+              personal data is handled, you can contact us at
+              <a href="mailto:glowie@glowsome.com">
+                glowie@glowsome.com
+              </a>.
+            </p>
+
+
+            <h2>
+              2. What information we collect
+            </h2>
+
+            <p>
+              Depending on how you use Glowie, we may collect and process the
+              following categories of information:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Conversation data:</strong> the messages and other
+                information you choose to share while interacting with Glowie.
+              </li>
+
+              <li>
+                <strong>Account information:</strong> information needed to
+                create, maintain and manage your account.
+              </li>
+
+              <li>
+                <strong>Device and usage information:</strong> technical
+                information about how Glowie is accessed and used, including
+                information necessary to maintain security, reliability and
+                functionality.
+              </li>
+            </ul>
+
+            <p>
+              We do not require you to provide your name as part of your
+              conversations with Glowie unless you choose to share it.
+            </p>
+
+
+            <h2>
+              3. Why we process your information
+            </h2>
+
+            <p>
+              Conversation data is used only to provide and personalise your
+              Glowie experience, including maintaining appropriate context
+              within your conversations.
+            </p>
+
+            <p>
+              We do not use your conversation data to train AI models, sell
+              advertising, sell your personal data or use your conversations
+              for unrelated purposes.
+            </p>
+
+            <p>
+              Account and usage information may be processed where necessary
+              to provide the service under our contract with you and where
+              necessary for our legitimate interests in operating, protecting
+              and improving the reliability of Glowie.
+            </p>
+
+            <p>
+              Where your conversations contain sensitive personal data, we
+              process that information on the basis of your explicit consent.
+            </p>
+
+
+            <h2>
+              4. Sensitive personal data
+            </h2>
+
+            <p>
+              Because Glowie is designed as a space for personal reflection,
+              you may choose to discuss sensitive topics such as relationships,
+              emotions, sexuality or mental well-being.
+            </p>
+
+            <p>
+              Some of this information may constitute special category
+              personal data under the General Data Protection Regulation
+              ("GDPR").
+            </p>
+
+            <p>
+              By choosing to use Glowie and voluntarily sharing this
+              information, you consent to its processing for the purpose of
+              providing the Glowie service. You can withdraw your consent by
+              deleting your account.
+            </p>
+
+
+            <h2>
+              5. How and where your data is stored
+            </h2>
+
+            <p>
+              We take privacy and security seriously. Core Glowie data is
+              stored in the European Union.
+            </p>
+
+            <p>
+              Our infrastructure includes Amazon Web Services in Frankfurt,
+              Germany, and Pinecone infrastructure in Ireland.
+            </p>
+
+            <p>
+              Data is encrypted in transit and at rest using appropriate
+              technical safeguards.
+            </p>
+
+            <p>
+              Glowsome personnel do not routinely have direct access to the
+              content of your conversations. Conversation data is not used for
+              AI model training.
+            </p>
+
+
+            <h2>
+              6. International data transfers
+            </h2>
+
+            <p>
+              We use BuddyPro as a service provider involved in delivering
+              Glowie. BuddyPro and its sub-processors may process limited data
+              required to provide the service.
+            </p>
+
+            <p>
+              When Glowie generates an AI response, information may be
+              transmitted temporarily to an AI provider. Some of these
+              providers may process data outside the European Economic Area,
+              including in the United States.
+            </p>
+
+            <p>
+              Where personal data is transferred outside the European
+              Economic Area, appropriate safeguards are used where required,
+              including the European Commission's Standard Contractual
+              Clauses under Decision 2021/914 or, where applicable,
+              participation in the EU-U.S. Data Privacy Framework.
+            </p>
+
+            <p>
+              Core stored Glowie data remains within the European Union.
+              Transfers to AI providers are transient and are used only to
+              generate responses. Conversation data is not provided for model
+              training.
+            </p>
+
+            <p>
+              You can read BuddyPro's privacy information at
+              <a
+                href="https://buddypro.ai/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                buddypro.ai/privacy
+              </a>
+              and its terms at
+              <a
+                href="https://buddypro.ai/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                buddypro.ai/terms
+              </a>.
+            </p>
+
+
+            <h2>
+              7. How long we keep your data
+            </h2>
+
+            <p>
+              Your data is generally retained while your account remains
+              active so that we can provide the Glowie service.
+            </p>
+
+            <p>
+              If you delete your account, associated personal data is
+              scheduled for deletion. Deletion is normally completed within
+              a few days and, including relevant backups, within 30 days.
+            </p>
+
+            <p>
+              If you need assistance with deletion, contact
+              <a href="mailto:glowie@glowsome.com">
+                glowie@glowsome.com
+              </a>.
+            </p>
+
+
+            <h2>
+              8. Your rights under GDPR
+            </h2>
+
+            <p>
+              If the GDPR applies to you, you may have rights including the
+              right to:
+            </p>
+
+            <ul>
+              <li>request access to your personal data;</li>
+              <li>request correction of inaccurate personal data;</li>
+              <li>request deletion of your personal data;</li>
+              <li>request restriction of processing;</li>
+              <li>object to certain processing;</li>
+              <li>
+                receive portable copies of eligible account data; and
+              </li>
+              <li>
+                withdraw consent where processing is based on consent.
+              </li>
+            </ul>
+
+            <p>
+              Conversation content is not provided as a downloadable export
+              by design. You can, however, delete your conversation data and
+              account.
+            </p>
+
+            <p>
+              You also have the right to lodge a complaint with the relevant
+              data protection authority.
+            </p>
+
+
+            <h2>
+              9. Automated decision-making
+            </h2>
+
+            <p>
+              Glowie does not use your personal data to make automated
+              decisions that produce legal effects or similarly significant
+              effects about you.
+            </p>
+
+
+            <h2>
+              10. Third-party service providers
+            </h2>
+
+            <p>
+              We rely on carefully selected service providers to operate
+              Glowie. These may include:
+            </p>
+
+            <ul>
+              <li>
+                BuddyPro and its authorised sub-processors;
+              </li>
+
+              <li>
+                AI service providers such as OpenAI, Anthropic, Google or
+                OpenRouter where required to generate Glowie responses;
+              </li>
+
+              <li>
+                Pinecone infrastructure in Ireland;
+              </li>
+
+              <li>
+                Amazon Web Services infrastructure in Frankfurt, Germany;
+              </li>
+
+              <li>
+                payment processing providers where payments are made outside
+                Apple's App Store; and
+              </li>
+
+              <li>
+                Apple, where subscriptions or purchases are made through the
+                iOS App Store.
+              </li>
+            </ul>
+
+            <p>
+              A current list of BuddyPro sub-processors can be found at
+              <a
+                href="https://buddypro.ai/terms/sub-processors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                buddypro.ai/terms/sub-processors
+              </a>.
+            </p>
+
+            <p>
+              We do not sell your personal data.
+            </p>
+
+
+            <h2>
+              11. Glowie is not a medical or therapeutic service
+            </h2>
+
+            <p>
+              Glowie is an AI companion designed to support reflection and
+              self-exploration. It is not a medical service, psychotherapy,
+              psychological treatment, diagnosis or crisis service.
+            </p>
+
+            <p>
+              If you believe you or another person may be in immediate danger,
+              experiencing a medical emergency or at risk of self-harm, contact
+              your local emergency services or an appropriate crisis service
+              immediately.
+            </p>
+
+
+            <h2>
+              12. Children
+            </h2>
+
+            <p>
+              Glowie is intended only for users aged 18 or over. We do not
+              knowingly provide the service to children.
+            </p>
+
+
+            <h2>
+              13. Changes to this Privacy Policy
+            </h2>
+
+            <p>
+              We may update this Privacy Policy from time to time to reflect
+              changes to Glowie, our service providers or applicable legal
+              requirements.
+            </p>
+
+            <p>
+              Where appropriate, we will make reasonable efforts to inform
+              users of material changes.
+            </p>
+
+
+            <div class="legal-summary">
+
+              <h2>
+                Your privacy, in plain terms
+              </h2>
+
+              <p>
+                Your conversations are there to make Glowie useful to you.
+                They are not sold, used for advertising or used to train AI
+                models.
+              </p>
+
+              <p>
+                Core Glowie data is stored in the EU. Information may be sent
+                temporarily to AI providers when necessary to generate a
+                response, with appropriate data protection safeguards.
+              </p>
+
+              <p>
+                You can delete your account and associated data, and you can
+                contact us at
+                <a href="mailto:glowie@glowsome.com">
+                  glowie@glowsome.com
+                </a>
+                if you have questions about your privacy.
+              </p>
+
+            </div>
+
+
+            <div class="legal-page-links">
+
+              <a
+                href="#terms"
+                data-page="terms"
+              >
+                Terms of Service
+                <span>↗</span>
+              </a>
+
+              <a
+                href="#glowie"
+                data-page="glowie"
+              >
+                Back to Glowie
+                <span>↗</span>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>  <!-- TERMS OF SERVICE -->
+
+  <main
+    class="scene"
+    id="terms"
+    data-scene="terms"
+  >
+
+    <section class="legal-page">
+
+      <div class="container">
+        <div class="legal-inner">
+
+          <p class="eyebrow">
+            Glowie
+          </p>
+
+          <h1>
+            Terms of
+            <span class="italic">Service.</span>
+          </h1>
+
+          <p class="legal-date">
+            Last updated: September 2026
+          </p>
+
+
+          <div class="legal-content">
+
+            <p>
+              These Terms of Service ("Terms") govern your use of Glowie.
+              By creating an account, purchasing a subscription or otherwise
+              using Glowie, you agree to these Terms.
+            </p>
+
+
+            <h2>
+              1. Who we are
+            </h2>
+
+            <p>
+              Glowie is operated by Glowsome s.r.o., U žlábku 174, Prague 5,
+              155 31, Czech Republic, company ID 09021965.
+            </p>
+
+            <p>
+              You can contact us at
+              <a href="mailto:glowie@glowsome.com">
+                glowie@glowsome.com
+              </a>.
+            </p>
+
+
+            <h2>
+              2. What Glowie is
+            </h2>
+
+            <p>
+              Glowie is an AI companion designed to support reflection,
+              self-exploration and greater understanding of relationships.
+              It uses conversational artificial intelligence informed by
+              systemic therapy principles to provide a space for thoughtful,
+              curious dialogue.
+            </p>
+
+            <p>
+              Glowie is not psychotherapy, psychological treatment, medical
+              treatment, diagnosis, professional counselling or a crisis
+              service.
+            </p>
+
+            <p>
+              Glowie does not replace a qualified therapist, psychologist,
+              doctor or other healthcare professional. Responses generated by
+              Glowie should not be treated as professional medical,
+              psychological, legal or other professional advice.
+            </p>
+
+            <p>
+              If you believe you or another person may be in immediate danger,
+              experiencing a medical emergency or at risk of self-harm, contact
+              your local emergency services or an appropriate crisis service
+              immediately.
+            </p>
+
+
+            <h2>
+              3. Age requirement
+            </h2>
+
+            <p>
+              You must be at least 18 years old to use Glowie.
+            </p>
+
+            <p>
+              By creating an account or using the service, you confirm that
+              you are 18 years of age or older and legally able to enter into
+              these Terms.
+            </p>
+
+
+            <h2>
+              4. Subscriptions, message allowances and payments
+            </h2>
+
+            <p>
+              Glowie may be offered through paid subscriptions and additional
+              message packages.
+            </p>
+
+            <p>
+              The available plans are:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Monthly subscription:</strong>
+                300 messages per month for €70.
+              </li>
+
+              <li>
+                <strong>Quarterly subscription:</strong>
+                300 messages per month for three months for €189.
+              </li>
+
+              <li>
+                <strong>Additional message package:</strong>
+                a one-time purchase of 500 additional messages for €117.
+                Additional message packages do not expire but require an
+                active subscription to use.
+              </li>
+            </ul>
+
+            <p>
+              Both messages you send and messages generated by Glowie count
+              towards your message allowance. A monthly allowance of 300
+              messages therefore represents approximately 150 conversational
+              exchanges, depending on how you use the service. A package of
+              500 additional messages represents approximately 250
+              conversational exchanges.
+            </p>
+
+            <p>
+              Your monthly message allowance resets at the beginning of each
+              new subscription period. Unused monthly messages do not carry
+              over into the following month.
+            </p>
+
+            <p>
+              Purchased additional messages do not expire and are used after
+              the monthly allowance included with your active subscription
+              has been used.
+            </p>
+
+
+            <h3>
+              App Store purchases
+            </h3>
+
+            <p>
+              Where you subscribe or make a purchase through Apple's App
+              Store, payment is charged to your Apple ID account at
+              confirmation of purchase.
+            </p>
+
+            <p>
+              Prices displayed in the App Store may vary by country or region
+              and may include applicable taxes or local pricing adjustments.
+              The price displayed by Apple at the time of purchase is the
+              price that applies to your transaction.
+            </p>
+
+
+            <h3>
+              Automatic renewal
+            </h3>
+
+            <p>
+              Subscriptions purchased through Apple's App Store automatically
+              renew unless auto-renewal is turned off at least 24 hours before
+              the end of the current subscription period.
+            </p>
+
+            <p>
+              Your Apple ID account may be charged for renewal within 24 hours
+              before the end of the current subscription period.
+            </p>
+
+            <p>
+              You can manage or cancel your subscription through your Apple ID
+              subscription settings.
+            </p>
+
+
+            <h2>
+              5. Cancellation, refunds and right of withdrawal
+            </h2>
+
+            <p>
+              You can cancel an App Store subscription at any time through
+              your Apple subscription settings. Cancellation prevents future
+              renewals but does not normally end access for a subscription
+              period that has already been paid for.
+            </p>
+
+            <p>
+              Where your purchase was made through Apple's App Store, refund
+              requests are handled by Apple and are subject to Apple's
+              applicable terms and refund policies. You can request a refund
+              from Apple at
+              <a
+                href="https://reportaproblem.apple.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                reportaproblem.apple.com
+              </a>.
+            </p>
+
+            <p>
+              If you are a consumer in the European Union or European Economic
+              Area, you may have a statutory right to withdraw from certain
+              distance contracts within 14 days.
+            </p>
+
+            <p>
+              Where you expressly request immediate access to digital content
+              or a digital service and acknowledge that providing the service
+              may affect or end your statutory withdrawal right, the right of
+              withdrawal may no longer apply once performance has begun, to
+              the extent permitted by applicable law.
+            </p>
+
+            <p>
+              Nothing in these Terms removes consumer rights that cannot
+              lawfully be excluded or limited.
+            </p>
+
+
+            <h2>
+              6. Acceptable use
+            </h2>
+
+            <p>
+              You agree to use Glowie lawfully and responsibly.
+            </p>
+
+            <p>
+              You must not:
+            </p>
+
+            <ul>
+              <li>
+                use Glowie in violation of applicable laws or regulations;
+              </li>
+
+              <li>
+                attempt to gain unauthorised access to Glowie, its systems,
+                accounts or infrastructure;
+              </li>
+
+              <li>
+                interfere with, damage, overload or disrupt the service or its
+                security features;
+              </li>
+
+              <li>
+                reverse engineer, scrape, systematically extract or reproduce
+                the service except where applicable law expressly permits it;
+              </li>
+
+              <li>
+                use Glowie to infringe the rights, privacy or intellectual
+                property of another person;
+              </li>
+
+              <li>
+                impersonate another person or misrepresent your identity in a
+                way intended to deceive or cause harm; or
+              </li>
+
+              <li>
+                use the service for fraudulent, abusive or unlawful purposes.
+              </li>
+            </ul>
+
+            <p>
+              We may suspend or terminate access where we reasonably believe
+              these Terms have been materially breached or where this is
+              necessary to protect Glowie, its users or third parties.
+            </p>
+
+
+            <h2>
+              7. Privacy and personal data
+            </h2>
+
+            <p>
+              Your privacy is important to us. Our collection and processing
+              of personal data is described in our
+              <a
+                href="#privacy"
+                data-page="privacy"
+              >
+                Privacy Policy
+              </a>.
+            </p>
+
+            <p>
+              Your conversations are used to provide and personalise the
+              Glowie service. Conversation data is not sold or used to train
+              AI models.
+            </p>
+
+            <p>
+              Because you may choose to discuss personal or sensitive subjects
+              with Glowie, you should only share information that you are
+              comfortable providing through the service.
+            </p>
+
+
+            <h2>
+              8. Intellectual property
+            </h2>
+
+            <p>
+              Glowie, the Glowsome name, branding, interface, software,
+              designs, graphics, text and other materials provided as part of
+              the service are owned by or licensed to Glowsome s.r.o. and are
+              protected by applicable intellectual property laws.
+            </p>
+
+            <p>
+              These Terms give you a limited, personal, non-exclusive,
+              non-transferable and revocable right to access and use Glowie
+              for its intended purpose.
+            </p>
+
+            <p>
+              You retain rights in content that you submit to Glowie, subject
+              to the permissions necessary for us and our service providers to
+              process that content in order to operate and provide the
+              service.
+            </p>
+
+            <p>
+              You may not copy, sell, license, distribute or commercially
+              exploit Glowie or its proprietary materials except with our
+              written permission or where applicable law permits it.
+            </p>
+
+
+            <h2>
+              9. Availability and changes to Glowie
+            </h2>
+
+            <p>
+              We aim to provide Glowie reliably, but we do not guarantee that
+              the service will always be available, uninterrupted or
+              error-free.
+            </p>
+
+            <p>
+              Glowie may occasionally be unavailable because of maintenance,
+              technical problems, third-party service interruptions, security
+              requirements or circumstances outside our reasonable control.
+            </p>
+
+            <p>
+              We may update, modify, add or remove features where reasonably
+              necessary to maintain, improve or develop the service.
+            </p>
+
+            <p>
+              Where a material change significantly affects a paid service, we
+              will take reasonable steps to provide appropriate information
+              or notice where required by applicable law.
+            </p>
+
+
+            <h2>
+              10. Liability
+            </h2>
+
+            <p>
+              Glowie is intended as a reflective AI companion. AI-generated
+              responses may sometimes be incomplete, inaccurate, unsuitable or
+              unexpected. You remain responsible for decisions and actions you
+              take based on your use of the service.
+            </p>
+
+            <p>
+              To the fullest extent permitted by applicable law, Glowsome
+              s.r.o. will not be liable for indirect, incidental, special or
+              consequential losses arising from or connected with your use of
+              Glowie.
+            </p>
+
+            <p>
+              Nothing in these Terms excludes or limits liability where doing
+              so would be unlawful, including liability that cannot be
+              excluded under applicable consumer protection law.
+            </p>
+
+            <p>
+              To the extent permitted by applicable law, our total aggregate
+              liability arising from or relating to the paid Glowie service
+              will not exceed the amount you paid for Glowie during the three
+              months immediately preceding the event giving rise to the claim.
+            </p>
+
+
+            <h2>
+              11. Governing law and consumer rights
+            </h2>
+
+            <p>
+              These Terms are governed by the laws of the Czech Republic,
+              without prejudice to mandatory consumer protection rights that
+              may apply to you under the law of the country in which you
+              normally live.
+            </p>
+
+            <p>
+              If you are a consumer resident in the European Union, you may
+              also benefit from mandatory rights and protections under the law
+              of your country of residence.
+            </p>
+
+            <p>
+              Any dispute will be subject to the jurisdiction of the competent
+              courts determined under applicable law.
+            </p>
+
+            <p>
+              Information about the European Union's online dispute resolution
+              platform can be found at
+              <a
+                href="https://ec.europa.eu/consumers/odr/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ec.europa.eu/consumers/odr
+              </a>.
+            </p>
+
+            <p>
+              If you download or purchase Glowie through Apple's App Store,
+              your use of the App Store is also subject to Apple's applicable
+              terms and conditions.
+            </p>
+
+
+            <h2>
+              12. General
+            </h2>
+
+            <p>
+              If any provision of these Terms is found to be invalid or
+              unenforceable, the remaining provisions will continue to apply.
+            </p>
+
+            <p>
+              Our failure to enforce a provision of these Terms does not waive
+              our right to enforce it later.
+            </p>
+
+            <p>
+              We may update these Terms from time to time to reflect changes
+              to Glowie, our business, applicable law or the services we rely
+              on.
+            </p>
+
+            <p>
+              Where changes are material, we will take reasonable steps to
+              notify users where appropriate or required by law.
+            </p>
+
+            <p>
+              If you have questions about these Terms, contact
+              <a href="mailto:glowie@glowsome.com">
+                glowie@glowsome.com
+              </a>.
+            </p>
+
+
+            <div class="legal-page-links">
+
+              <a
+                href="#privacy"
+                data-page="privacy"
+              >
+                Privacy Policy
+                <span>↗</span>
+              </a>
+
+              <a
+                href="#glowie"
+                data-page="glowie"
+              >
+                Back to Glowie
+                <span>↗</span>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
   <footer class="site-footer">
 
     <div class="footer-top container">
@@ -2758,9 +3792,8 @@
       <div class="footer-links">
 
         <a
-          href="https://lucierust.com"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#about"
+          data-page="about"
         >
           Lucie Rust
         </a>
@@ -2786,71 +3819,120 @@
           Contact
         </a>
 
+        <a
+          href="#privacy"
+          data-page="privacy"
+        >
+          Privacy Policy
+        </a>
+
+        <a
+          href="#terms"
+          data-page="terms"
+        >
+          Terms of Service
+        </a>
+
       </div>
 
+
       <p class="footer-copyright">
-        © 2026 Glowsome
+        © 2026 Glowsome Relationships
       </p>
 
     </div>
 
-    <div class="footer-word">
-      GLOWSOME
+
+    <div
+      class="footer-word"
+      aria-hidden="true"
+    >
+      glowsome
     </div>
 
   </footer>
 
 
   <script>
-    const scenes = document.querySelectorAll("[data-scene]");
-    const pageLinks = document.querySelectorAll("[data-page]");
 
-    const menuButton = document.getElementById("menuButton");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const siteHeader = document.getElementById("siteHeader");
-
-
-    const pageTitles = {
-      home: "Glowsome Relationships",
-      glowie: "Glowie | Glowsome Relationships",
-      about: "About Lucie | Glowsome Relationships",
-      reconnection: "Reconnection Project | Glowsome Relationships",
-      contact: "Contact | Glowsome Relationships"
-    };
+    const validPages = [
+      "home",
+      "glowie",
+      "about",
+      "reconnection",
+      "contact",
+      "privacy",
+      "terms"
+    ];
 
 
-    function showPage(page, updateHash = true) {
+    const scenes =
+      document.querySelectorAll("[data-scene]");
 
-      const validPages = [
-        "home",
-        "glowie",
-        "about",
-        "reconnection",
-        "contact"
-      ];
+    const pageLinks =
+      document.querySelectorAll("[data-page]");
 
-      if (!validPages.includes(page)) {
-        page = "home";
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const siteHeader =
+      document.getElementById("siteHeader");
+
+
+    function closeMenu() {
+      document.body.classList.remove("menu-open");
+
+      if (menuButton) {
+        menuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        menuButton.setAttribute(
+          "aria-label",
+          "Open navigation"
+        );
       }
+    }
 
 
-      scenes.forEach((scene) => {
-        scene.classList.remove("active");
-      });
+    function openMenu() {
+      document.body.classList.add("menu-open");
 
+      if (menuButton) {
+        menuButton.setAttribute(
+          "aria-expanded",
+          "true"
+        );
 
-      const targetScene = document.querySelector(
-        `[data-scene="${page}"]`
-      );
-
-      if (targetScene) {
-        targetScene.classList.add("active");
+        menuButton.setAttribute(
+          "aria-label",
+          "Close navigation"
+        );
       }
+    }
 
+
+    function toggleMenu() {
+      if (
+        document.body.classList.contains(
+          "menu-open"
+        )
+      ) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+
+
+    function updateActiveNavigation(pageName) {
 
       pageLinks.forEach((link) => {
 
-        if (link.dataset.page === page) {
+        if (
+          link.dataset.page === pageName
+        ) {
           link.classList.add("active");
         } else {
           link.classList.remove("active");
@@ -2858,34 +3940,59 @@
 
       });
 
+    }
 
-      document.title = pageTitles[page];
+
+    function showPage(
+      pageName,
+      updateHistory = true
+    ) {
+
+      const nextPage =
+        validPages.includes(pageName)
+          ? pageName
+          : "home";
 
 
-      if (updateHash) {
+      scenes.forEach((scene) => {
 
-        const newHash =
-          page === "home"
-            ? "#home"
-            : `#${page}`;
+        if (
+          scene.dataset.scene === nextPage
+        ) {
+          scene.classList.add("active");
+        } else {
+          scene.classList.remove("active");
+        }
 
-        if (window.location.hash !== newHash) {
+      });
+
+
+      updateActiveNavigation(nextPage);
+
+      closeMenu();
+
+
+      if (updateHistory) {
+
+        const nextHash =
+          `#${nextPage}`;
+
+        if (
+          window.location.hash !== nextHash
+        ) {
           history.pushState(
-            { page },
+            { page: nextPage },
             "",
-            newHash
+            nextHash
           );
         }
 
       }
 
 
-      closeMenu();
-
-
       window.scrollTo({
         top: 0,
-        behavior: "instant"
+        behavior: "smooth"
       });
 
     }
@@ -2893,190 +4000,157 @@
 
     pageLinks.forEach((link) => {
 
-      link.addEventListener("click", (event) => {
+      link.addEventListener(
+        "click",
+        (event) => {
 
-        const page = link.dataset.page;
+          const pageName =
+            link.dataset.page;
 
-        if (!page) return;
+          if (!pageName) {
+            return;
+          }
 
-        event.preventDefault();
+          event.preventDefault();
 
-        showPage(page);
+          showPage(pageName);
 
-      });
+        }
+      );
 
     });
 
 
-    function openMenu() {
+    if (menuButton) {
 
-      document.body.classList.add("menu-open");
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        "true"
-      );
-
-      menuButton.setAttribute(
-        "aria-label",
-        "Close navigation"
+      menuButton.addEventListener(
+        "click",
+        toggleMenu
       );
 
     }
 
-
-    function closeMenu() {
-
-      document.body.classList.remove("menu-open");
-
-      menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-      menuButton.setAttribute(
-        "aria-label",
-        "Open navigation"
-      );
-
-    }
-
-
-    menuButton.addEventListener("click", () => {
-
-      const menuIsOpen =
-        document.body.classList.contains("menu-open");
-
-      if (menuIsOpen) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-
-    });
-
-
-    window.addEventListener("popstate", () => {
-
-      const page =
-        window.location.hash.replace("#", "") || "home";
-
-      showPage(page, false);
-
-    });
-
-
-    function updateHeader() {
-
-      if (window.scrollY > 15) {
-        siteHeader.classList.add("scrolled");
-      } else {
-        siteHeader.classList.remove("scrolled");
-      }
-
-    }
 
     window.addEventListener(
-      "scroll",
-      updateHeader,
-      { passive: true }
+      "popstate",
+      () => {
+
+        const hash =
+          window.location.hash
+            .replace("#", "");
+
+        const pageName =
+          validPages.includes(hash)
+            ? hash
+            : "home";
+
+        showPage(
+          pageName,
+          false
+        );
+
+      }
     );
-
-    updateHeader();
-
-
-    const placeholderForms =
-      document.querySelectorAll("[data-placeholder-form]");
-
-
-    placeholderForms.forEach((form) => {
-
-      form.addEventListener("submit", (event) => {
-
-        event.preventDefault();
-
-        const input = form.querySelector("input");
-        const feedback =
-          form.parentElement.querySelector(".notify-feedback");
-
-        if (!input.value.trim()) {
-          feedback.textContent =
-            "Please enter your email address.";
-          return;
-        }
-
-        if (!input.checkValidity()) {
-          feedback.textContent =
-            "Please enter a valid email address.";
-          return;
-        }
-
-        feedback.textContent =
-          "Thank you. Email signup will be connected soon.";
-
-        input.value = "";
-
-      });
-
-    });
-
-
-    const placeholderLinks =
-      document.querySelectorAll(".placeholder-link");
-
-
-    placeholderLinks.forEach((link) => {
-
-      link.addEventListener("click", (event) => {
-
-        event.preventDefault();
-
-        const originalText =
-          link.querySelector("span:first-child");
-
-        if (!originalText) return;
-
-        const previousText =
-          originalText.textContent;
-
-        originalText.textContent =
-          "Coming soon";
-
-        setTimeout(() => {
-
-          originalText.textContent =
-            previousText;
-
-        }, 1800);
-
-      });
-
-    });
 
 
     function loadInitialPage() {
 
       const hash =
-        window.location.hash.replace("#", "");
-
-      const validPages = [
-        "home",
-        "glowie",
-        "about",
-        "reconnection",
-        "contact"
-      ];
+        window.location.hash
+          .replace("#", "");
 
       const initialPage =
         validPages.includes(hash)
           ? hash
           : "home";
 
-      showPage(initialPage, false);
+      showPage(
+        initialPage,
+        false
+      );
 
     }
 
+
+    function handleHeader() {
+
+      if (!siteHeader) {
+        return;
+      }
+
+      if (window.scrollY > 20) {
+        siteHeader.classList.add(
+          "scrolled"
+        );
+      } else {
+        siteHeader.classList.remove(
+          "scrolled"
+        );
+      }
+
+    }
+
+
+    window.addEventListener(
+      "scroll",
+      handleHeader,
+      { passive: true }
+    );
+
+
+    handleHeader();
+
+
+    document
+      .querySelectorAll(
+        "[data-placeholder-form]"
+      )
+      .forEach((form) => {
+
+        form.addEventListener(
+          "submit",
+          (event) => {
+
+            event.preventDefault();
+
+            const feedback =
+              form.parentElement.querySelector(
+                ".notify-feedback"
+              );
+
+            if (feedback) {
+              feedback.textContent =
+                "Thank you. We'll let you know when it's ready.";
+            }
+
+            form.reset();
+
+          }
+        );
+
+      });
+
+
+    document
+      .querySelectorAll(
+        ".placeholder-link"
+      )
+      .forEach((link) => {
+
+        link.addEventListener(
+          "click",
+          (event) => {
+
+            event.preventDefault();
+
+          }
+        );
+
+      });
+
+
     loadInitialPage();
+
   </script>
 
 </body>
