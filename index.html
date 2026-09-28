@@ -15,6 +15,34 @@
     content="Glowsome Relationships. Nurturing relationships anytime, anywhere."
   >
 
+  <meta name="theme-color" content="#fdfcfa">
+
+  <link rel="canonical" href="https://glowsome.com/">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Glowsome Relationships">
+  <meta
+    property="og:description"
+    content="Nurturing relationships anytime, anywhere."
+  >
+  <meta property="og:url" content="https://glowsome.com/">
+  <meta
+    property="og:image"
+    content="https://glowsome.com/assets/glowie-transparent-curved.png"
+  >
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Glowsome Relationships">
+  <meta
+    name="twitter:description"
+    content="Nurturing relationships anytime, anywhere."
+  >
+  <meta
+    name="twitter:image"
+    content="https://glowsome.com/assets/glowie-transparent-curved.png"
+  >
+
   <link
     rel="icon"
     type="image/png"
@@ -43,6 +71,10 @@
       --warm-grey: #f6f4f2;
 
       --page-x: clamp(22px, 4.6vw, 78px);
+      --safe-left: env(safe-area-inset-left, 0px);
+      --safe-right: env(safe-area-inset-right, 0px);
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
       --content-width: 1640px;
 
       --ease: cubic-bezier(.22, 1, .36, 1);
@@ -110,16 +142,42 @@
       color: white;
     }
 
+    :focus-visible {
+      outline: 2px solid var(--berry);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 2000;
+      top: 12px;
+      left: 12px;
+
+      padding: 10px 14px;
+
+      background: var(--ink);
+      color: white;
+      border-radius: 999px;
+
+      transform: translateY(-180%);
+      transition: transform .2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
     .container {
       width: min(100%, var(--content-width));
       margin-inline: auto;
-      padding-inline: var(--page-x);
+      padding-left: max(var(--page-x), var(--safe-left));
+      padding-right: max(var(--page-x), var(--safe-right));
     }
 
     .eyebrow {
       margin: 0;
 
-      color: #888;
+      color: #686868;
       font-size: 12px;
       font-weight: 500;
       line-height: 1.4;
@@ -419,9 +477,13 @@
       flex-direction: column;
       justify-content: center;
 
-      min-height: 100vh;
+      min-height: 100dvh;
 
-      padding: 115px var(--page-x) 60px;
+      padding:
+        max(115px, calc(82px + var(--safe-top)))
+        max(var(--page-x), var(--safe-right))
+        max(60px, var(--safe-bottom))
+        max(var(--page-x), var(--safe-left));
     }
 
     .mobile-menu nav {
@@ -712,6 +774,10 @@
       line-height: 1.55;
 
       letter-spacing: -.02em;
+    }
+
+    .reconnection-followup {
+      margin-top: 24px !important;
     }
 
     .notify-form {
@@ -1618,7 +1684,7 @@
     .footer-copyright {
       margin: 0;
 
-      color: #969696;
+      color: #686868;
 
       font-size: 15px;
     }
@@ -1879,6 +1945,8 @@
 
 <body>
 
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
   <header class="site-header" id="siteHeader">
     <div class="header-inner container">
 
@@ -1891,6 +1959,7 @@
         <img
           src="assets/DCB3BB74-840F-48D5-A076-90D64A282AE4.png"
           alt="Glowsome Relationships"
+          decoding="async"
         >
       </a>
 
@@ -1905,6 +1974,7 @@
       </nav>
 
       <button
+        type="button"
         class="menu-button"
         id="menuButton"
         aria-label="Open navigation"
@@ -1919,7 +1989,7 @@
   </header>
 
 
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
     <div class="mobile-menu-inner">
 
       <nav aria-label="Mobile navigation">
@@ -1935,6 +2005,8 @@
     </div>
   </div>
 
+
+  <main id="mainContent" tabindex="-1">
 
   <!-- HOME -->
 
@@ -2057,6 +2129,8 @@
         <img
           src="assets/4-IMG_3889-Edit-top-denoise-faceai-Edit.jpg"
           alt="Lucie Rust"
+          loading="lazy"
+          decoding="async"
         >
       </div>
 
@@ -2091,8 +2165,9 @@
             </p>
 
             <form
-              class="notify-form"
-              data-email-signup
+              action="https://buttondown.com/api/emails/embed-subscribe/Glowsome"
+              method="post"
+              class="notify-form embeddable-buttondown-form"
             >
               <input
                 type="email"
@@ -2308,7 +2383,10 @@
 
       </div>
 
-    </section>    <section class="knowledge-section">
+    </section>
+
+
+    <section class="knowledge-section">
       <div class="container">
 
         <p class="eyebrow">
@@ -2509,6 +2587,8 @@
         <img
           src="assets/4-IMG_3889-Edit-top-denoise-faceai-Edit.jpg"
           alt="Lucie Rust"
+          loading="lazy"
+          decoding="async"
         >
       </div>
 
@@ -2612,7 +2692,7 @@
           <span class="italic">learning and reflection.</span>
         </h2>
 
-        <div class="education-list">
+        <div>
 
           <ul class="education-list">
 
@@ -2703,14 +2783,15 @@
               time.
             </p>
 
-            <p style="margin-top: 24px;">
+            <p class="reconnection-followup">
               Leave your email and we'll let you know when the first courses
               are ready.
             </p>
 
             <form
-              class="notify-form"
-              data-email-signup
+              action="https://buttondown.com/api/emails/embed-subscribe/Glowsome"
+              method="post"
+              class="notify-form embeddable-buttondown-form"
             >
 
               <input
@@ -3274,7 +3355,10 @@
 
     </section>
 
-  </section>  <!-- TERMS OF SERVICE -->
+  </section>
+
+
+  <!-- TERMS OF SERVICE -->
 
   <section
     class="scene"
@@ -3790,6 +3874,9 @@
   </section>
 
 
+  </main>
+
+
   <!-- FOOTER -->
 
   <footer class="site-footer">
@@ -3873,6 +3960,38 @@
     ];
 
 
+    const pageMetadata = {
+      home: {
+        title: "Glowsome Relationships",
+        description: "Glowsome Relationships. Nurturing relationships anytime, anywhere."
+      },
+      glowie: {
+        title: "Glowie | Glowsome Relationships",
+        description: "Meet Glowie, a calm AI companion for reflection and relationship self-exploration."
+      },
+      about: {
+        title: "About Lucie | Glowsome Relationships",
+        description: "Learn about Lucie Rust and her systemic approach to relationships, psychotherapy and coaching."
+      },
+      reconnection: {
+        title: "Reconnection Project | Glowsome Relationships",
+        description: "Explore the Reconnection Project, a growing collection of guided relationship courses."
+      },
+      contact: {
+        title: "Contact | Glowsome Relationships",
+        description: "Contact Glowsome Relationships about therapy, Glowie or the Reconnection Project."
+      },
+      privacy: {
+        title: "Privacy Policy | Glowie",
+        description: "Read the Glowie privacy policy."
+      },
+      terms: {
+        title: "Terms of Service | Glowie",
+        description: "Read the Glowie terms of service."
+      }
+    };
+
+
     const scenes =
       document.querySelectorAll("[data-scene]");
 
@@ -3882,18 +4001,35 @@
     const menuButton =
       document.getElementById("menuButton");
 
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
     const siteHeader =
       document.getElementById("siteHeader");
 
+    const descriptionMeta =
+      document.querySelector('meta[name="description"]');
 
-    function closeMenu() {
+
+    function getMenuFocusableElements() {
+      if (!mobileMenu) {
+        return [];
+      }
+
+      return Array.from(
+        mobileMenu.querySelectorAll(
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      );
+    }
+
+
+    function closeMenu(returnFocus = false) {
       document.body.classList.remove("menu-open");
-
-      const mobileMenu =
-        document.getElementById("mobileMenu");
 
       if (mobileMenu) {
         mobileMenu.setAttribute("aria-hidden", "true");
+        mobileMenu.setAttribute("inert", "");
       }
 
       if (menuButton) {
@@ -3906,6 +4042,10 @@
           "aria-label",
           "Open navigation"
         );
+
+        if (returnFocus) {
+          menuButton.focus();
+        }
       }
     }
 
@@ -3913,10 +4053,8 @@
     function openMenu() {
       document.body.classList.add("menu-open");
 
-      const mobileMenu =
-        document.getElementById("mobileMenu");
-
       if (mobileMenu) {
+        mobileMenu.removeAttribute("inert");
         mobileMenu.setAttribute("aria-hidden", "false");
       }
 
@@ -3931,6 +4069,13 @@
           "Close navigation"
         );
       }
+
+      const focusable =
+        getMenuFocusableElements();
+
+      if (focusable.length) {
+        focusable[0].focus();
+      }
     }
 
 
@@ -3940,7 +4085,7 @@
           "menu-open"
         )
       ) {
-        closeMenu();
+        closeMenu(true);
       } else {
         openMenu();
       }
@@ -3948,19 +4093,32 @@
 
 
     function updateActiveNavigation(pageName) {
-
       pageLinks.forEach((link) => {
-
         if (
           link.dataset.page === pageName
         ) {
           link.classList.add("active");
+          link.setAttribute("aria-current", "page");
         } else {
           link.classList.remove("active");
+          link.removeAttribute("aria-current");
         }
-
       });
+    }
 
+
+    function updatePageMetadata(pageName) {
+      const metadata =
+        pageMetadata[pageName] || pageMetadata.home;
+
+      document.title = metadata.title;
+
+      if (descriptionMeta) {
+        descriptionMeta.setAttribute(
+          "content",
+          metadata.description
+        );
+      }
     }
 
 
@@ -3968,33 +4126,28 @@
       pageName,
       updateHistory = true
     ) {
-
       const nextPage =
         validPages.includes(pageName)
           ? pageName
           : "home";
 
-
       scenes.forEach((scene) => {
-
         if (
           scene.dataset.scene === nextPage
         ) {
           scene.classList.add("active");
+          scene.removeAttribute("aria-hidden");
         } else {
           scene.classList.remove("active");
+          scene.setAttribute("aria-hidden", "true");
         }
-
       });
 
-
       updateActiveNavigation(nextPage);
-
-      closeMenu();
-
+      updatePageMetadata(nextPage);
+      closeMenu(false);
 
       if (updateHistory) {
-
         const nextHash =
           `#${nextPage}`;
 
@@ -4007,9 +4160,7 @@
             nextHash
           );
         }
-
       }
-
 
       const reduceMotion =
         window.matchMedia(
@@ -4020,16 +4171,13 @@
         top: 0,
         behavior: reduceMotion ? "auto" : "smooth"
       });
-
     }
 
 
     pageLinks.forEach((link) => {
-
       link.addEventListener(
         "click",
         (event) => {
-
           const pageName =
             link.dataset.page;
 
@@ -4038,29 +4186,73 @@
           }
 
           event.preventDefault();
-
           showPage(pageName);
-
         }
       );
-
     });
 
 
     if (menuButton) {
-
       menuButton.addEventListener(
         "click",
         toggleMenu
       );
-
     }
+
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+        const menuIsOpen =
+          document.body.classList.contains(
+            "menu-open"
+          );
+
+        if (!menuIsOpen) {
+          return;
+        }
+
+        if (event.key === "Escape") {
+          event.preventDefault();
+          closeMenu(true);
+          return;
+        }
+
+        if (event.key !== "Tab") {
+          return;
+        }
+
+        const focusable =
+          getMenuFocusableElements();
+
+        if (!focusable.length) {
+          event.preventDefault();
+          return;
+        }
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (
+          event.shiftKey &&
+          document.activeElement === first
+        ) {
+          event.preventDefault();
+          last.focus();
+        } else if (
+          !event.shiftKey &&
+          document.activeElement === last
+        ) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    );
 
 
     window.addEventListener(
       "popstate",
       () => {
-
         const hash =
           window.location.hash
             .replace("#", "");
@@ -4074,13 +4266,25 @@
           pageName,
           false
         );
+      }
+    );
 
+
+    window.addEventListener(
+      "hashchange",
+      () => {
+        const hash =
+          window.location.hash
+            .replace("#", "");
+
+        if (validPages.includes(hash)) {
+          showPage(hash, false);
+        }
       }
     );
 
 
     function loadInitialPage() {
-
       const hash =
         window.location.hash
           .replace("#", "");
@@ -4094,12 +4298,10 @@
         initialPage,
         false
       );
-
     }
 
 
     function handleHeader() {
-
       if (!siteHeader) {
         return;
       }
@@ -4113,7 +4315,6 @@
           "scrolled"
         );
       }
-
     }
 
 
@@ -4133,7 +4334,7 @@
             "menu-open"
           )
         ) {
-          closeMenu();
+          closeMenu(false);
         }
       },
       { passive: true }
@@ -4141,65 +4342,6 @@
 
 
     handleHeader();
-
-
-    document
-      .querySelectorAll(
-        "[data-email-signup]"
-      )
-      .forEach((form) => {
-
-        form.addEventListener(
-          "submit",
-          (event) => {
-
-            event.preventDefault();
-
-            if (!form.reportValidity()) {
-              return;
-            }
-
-            const emailInput =
-              form.querySelector(
-                'input[type="email"]'
-              );
-
-            const feedback =
-              form.parentElement.querySelector(
-                ".notify-feedback"
-              );
-
-            if (!emailInput) {
-              return;
-            }
-
-            const email =
-              emailInput.value.trim();
-
-            const subject =
-              encodeURIComponent(
-                "Glowie updates signup"
-              );
-
-            const body =
-              encodeURIComponent(
-                `Please add ${email} to the Glowie updates list.`
-              );
-
-            if (feedback) {
-              feedback.textContent =
-                "Your email app will open so you can confirm your request.";
-            }
-
-            window.location.href =
-              `mailto:glowie@glowsome.com?subject=${subject}&body=${body}`;
-
-          }
-        );
-
-      });
-
-
     loadInitialPage();
 
   </script>
