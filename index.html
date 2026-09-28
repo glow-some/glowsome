@@ -116,7 +116,6 @@
     body.menu-open {
       overflow: hidden;
       overscroll-behavior: none;
-      touch-action: none;
     }
 
     img {
@@ -459,6 +458,9 @@
       inset: 0;
 
       display: none;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
 
       background: rgba(253,252,250,.98);
       backdrop-filter: blur(20px);
@@ -890,16 +892,6 @@
       font-weight: 600;
 
       cursor: pointer;
-    }
-
-    .notify-feedback {
-      min-height: 20px;
-
-      margin-top: 12px;
-
-      color: var(--berry);
-
-      font-size: 13px;
     }
 
     .course-grid {
@@ -2264,11 +2256,6 @@
               </button>
             </form>
 
-            <div
-              class="notify-feedback"
-              aria-live="polite"
-            ></div>
-
           </div>
         </div>
 
@@ -2892,11 +2879,6 @@
               </button>
 
             </form>
-
-            <div
-              class="notify-feedback"
-              aria-live="polite"
-            ></div>
 
           </div>
 
@@ -4096,6 +4078,21 @@
     const descriptionMeta =
       document.querySelector('meta[name="description"]');
 
+    const ogTitleMeta =
+      document.querySelector('meta[property="og:title"]');
+
+    const ogDescriptionMeta =
+      document.querySelector('meta[property="og:description"]');
+
+    const ogUrlMeta =
+      document.querySelector('meta[property="og:url"]');
+
+    const twitterTitleMeta =
+      document.querySelector('meta[name="twitter:title"]');
+
+    const twitterDescriptionMeta =
+      document.querySelector('meta[name="twitter:description"]');
+
 
     function getMenuFocusableElements() {
       if (!mobileMenu) {
@@ -4197,10 +4194,50 @@
       const metadata =
         pageMetadata[pageName] || pageMetadata.home;
 
+      const pageUrl =
+        pageName === "home"
+          ? "https://glowsome.com/"
+          : `https://glowsome.com/#${pageName}`;
+
       document.title = metadata.title;
 
       if (descriptionMeta) {
         descriptionMeta.setAttribute(
+          "content",
+          metadata.description
+        );
+      }
+
+      if (ogTitleMeta) {
+        ogTitleMeta.setAttribute(
+          "content",
+          metadata.title
+        );
+      }
+
+      if (ogDescriptionMeta) {
+        ogDescriptionMeta.setAttribute(
+          "content",
+          metadata.description
+        );
+      }
+
+      if (ogUrlMeta) {
+        ogUrlMeta.setAttribute(
+          "content",
+          pageUrl
+        );
+      }
+
+      if (twitterTitleMeta) {
+        twitterTitleMeta.setAttribute(
+          "content",
+          metadata.title
+        );
+      }
+
+      if (twitterDescriptionMeta) {
+        twitterDescriptionMeta.setAttribute(
           "content",
           metadata.description
         );
@@ -4356,24 +4393,18 @@
             ? hash
             : "home";
 
+        if (hash && !validPages.includes(hash)) {
+          history.replaceState(
+            { page: "home" },
+            "",
+            "#home"
+          );
+        }
+
         showPage(
           pageName,
           false
         );
-      }
-    );
-
-
-    window.addEventListener(
-      "hashchange",
-      () => {
-        const hash =
-          window.location.hash
-            .replace("#", "");
-
-        if (validPages.includes(hash)) {
-          showPage(hash, false);
-        }
       }
     );
 
@@ -4387,6 +4418,14 @@
         validPages.includes(hash)
           ? hash
           : "home";
+
+      if (hash && !validPages.includes(hash)) {
+        history.replaceState(
+          { page: "home" },
+          "",
+          "#home"
+        );
+      }
 
       showPage(
         initialPage,
