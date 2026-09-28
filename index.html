@@ -824,6 +824,26 @@
       margin-top: 24px !important;
     }
 
+
+    .newsletter-title {
+      margin: 42px 0 10px;
+
+      color: var(--ink);
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.35;
+      letter-spacing: -.02em;
+    }
+
+    .newsletter-copy {
+      max-width: 680px;
+      margin: 0;
+
+      color: var(--grey);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
     .notify-form {
       display: flex;
       align-items: center;
@@ -2213,8 +2233,13 @@
 
             <p>
               Guided courses to help you build meaningful relationships,
-              step by step. Leave your email and we'll let you know the
-              moment doors open.
+              step by step.
+            </p>
+
+            <h3 class="newsletter-title">Sign up for the newsletter</h3>
+            <p class="newsletter-copy">
+              Get occasional updates from Glowsome, including news about the
+              Reconnection Project and a message when the first courses open.
             </p>
 
             <form
@@ -2225,7 +2250,7 @@
               <input
                 type="email"
                 name="email"
-                placeholder="your@email.com"
+                placeholder="Email address"
                 aria-label="Email address"
                 autocomplete="email"
                 required
@@ -2234,7 +2259,7 @@
               <input type="hidden" name="embed" value="1">
 
               <button type="submit">
-                Notify me
+                Sign up
                 <span>→</span>
               </button>
             </form>
@@ -2838,9 +2863,10 @@
               time.
             </p>
 
-            <p class="reconnection-followup">
-              Leave your email and we'll let you know when the first courses
-              are ready.
+            <h3 class="newsletter-title">Sign up for the newsletter</h3>
+            <p class="newsletter-copy">
+              Get occasional updates from Glowsome, including news about new
+              courses and a message when the Reconnection Project opens.
             </p>
 
             <form
@@ -2852,7 +2878,7 @@
               <input
                 type="email"
                 name="email"
-                placeholder="your@email.com"
+                placeholder="Email address"
                 aria-label="Email address"
                 autocomplete="email"
                 required
@@ -2861,7 +2887,7 @@
               <input type="hidden" name="embed" value="1">
 
               <button type="submit">
-                Notify me
+                Sign up
                 <span>→</span>
               </button>
 
