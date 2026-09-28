@@ -115,6 +115,8 @@
 
     body.menu-open {
       overflow: hidden;
+      overscroll-behavior: none;
+      touch-action: none;
     }
 
     img {
@@ -460,6 +462,7 @@
 
       background: rgba(253,252,250,.98);
       backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
 
       opacity: 0;
       pointer-events: none;
@@ -472,11 +475,52 @@
       pointer-events: auto;
     }
 
+    .mobile-menu-close {
+      position: fixed;
+      z-index: 1003;
+      top: max(18px, calc(var(--safe-top) + 10px));
+      right: max(18px, calc(var(--safe-right) + 10px));
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 48px;
+      height: 48px;
+      padding: 0;
+
+      background: rgba(255,255,255,.86);
+      color: var(--ink);
+      border: 1px solid rgba(30,30,30,.11);
+      border-radius: 50%;
+
+      font-size: 31px;
+      font-weight: 300;
+      line-height: 1;
+
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+
+      box-shadow: 0 7px 24px rgba(0,0,0,.06);
+    }
+
+    .mobile-menu-close:hover {
+      color: var(--berry);
+      border-color: rgba(187,40,83,.3);
+    }
+
+    body.menu-open .menu-button {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     .mobile-menu-inner {
       display: flex;
       flex-direction: column;
       justify-content: center;
 
+      min-height: 100vh;
       min-height: 100dvh;
 
       padding:
@@ -1990,6 +2034,15 @@
 
 
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
+    <button
+      type="button"
+      class="mobile-menu-close"
+      id="mobileMenuClose"
+      aria-label="Close navigation"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+
     <div class="mobile-menu-inner">
 
       <nav aria-label="Mobile navigation">
@@ -2177,6 +2230,8 @@
                 autocomplete="email"
                 required
               >
+
+              <input type="hidden" name="embed" value="1">
 
               <button type="submit">
                 Notify me
@@ -2802,6 +2857,8 @@
                 autocomplete="email"
                 required
               >
+
+              <input type="hidden" name="embed" value="1">
 
               <button type="submit">
                 Notify me
@@ -4004,6 +4061,9 @@
     const mobileMenu =
       document.getElementById("mobileMenu");
 
+    const mobileMenuClose =
+      document.getElementById("mobileMenuClose");
+
     const siteHeader =
       document.getElementById("siteHeader");
 
@@ -4196,6 +4256,14 @@
       menuButton.addEventListener(
         "click",
         toggleMenu
+      );
+    }
+
+
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener(
+        "click",
+        () => closeMenu(true)
       );
     }
 
