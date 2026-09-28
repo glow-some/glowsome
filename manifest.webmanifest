@@ -1,0 +1,18 @@
+{
+  "name": "Glowsome Relationships",
+  "short_name": "Glowsome",
+  "description": "Glowsome Relationships. Nurturing relationships anytime, anywhere.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fdfcfa",
+  "theme_color": "#fdfcfa",
+  "icons": [
+    {
+      "src": "assets/glowie-transparent-curved.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
